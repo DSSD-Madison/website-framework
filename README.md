@@ -1,49 +1,41 @@
-# Welcome to [Astro](https://astro.build)
+# DSSD Madison Website
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+## Overview
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This project is a content focused website made using Contentful's Headless CMS, Astro, frontend Javascript framework TBD, and deployed to Cloudflare Pages.
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## Learning Resources
+
+* [Git Tutorial](https://www.youtube.com/watch?v=8JJ101D3knE)
+
+* [Javascript Syntax Tutorial](https://www.w3schools.com/js/js_syntax.asp)
+
+* [HTTP Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+
+* [Astro Docs](https://docs.astro.build/en/getting-started/), especially:
+
+    * [MPA vs. SPA](https://docs.astro.build/en/concepts/mpa-vs-spa/)
+
+    * [Astro Islands](https://docs.astro.build/en/concepts/islands/)
+
+    * [Project Structure](https://docs.astro.build/en/core-concepts/project-structure/)
+
+    * [Data Fetching](https://docs.astro.build/en/guides/data-fetching/)
+
+    * [SSR](https://docs.astro.build/en/guides/server-side-rendering/)
+
+    * [Authoring Content](https://docs.astro.build/en/guides/content/)
+
+* [Headless CMS Overview](https://www.contentful.com/r/knowledgebase/what-is-headless-cms/)
+
+* Docs for frontend framework TBD
+
+## Project Management
+
+We will be using a Github Project with 3 sections: Backlog, In Progress, and Done. Issues in the Backlog will represent segments of work to get done, or problems that need to be fixed. 
+
+To contribute to the project, assign an issue in the Backlog to yourself and move it to the In Progress section. Create a new branch off of main and implement the feature/fix/improvement, making commits after completing each subsection of the work. Push your code and move the issue(s) it adresses to Done. Create a pull request (PR) into main with a [closing keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) in the description referencing the issue(s) that are addressed.
 
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
