@@ -1,8 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getContentTypes } from '../services/contentful';
 
 //Caches for 10 minutes, change this to be much longer eventually
 Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_MAX_AGE}`)
+
+//Uncomment out the below line to print out the content model whenever a request is made to the server (uncached)
+console.log(await getContentTypes())
 ---
 
 <Layout title="DSSD Madison">
