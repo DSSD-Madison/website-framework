@@ -28,7 +28,9 @@ This project is a content focused website made using Contentful's Headless CMS a
 
 * [Headless CMS Overview](https://www.contentful.com/r/knowledgebase/what-is-headless-cms/)
 
-* [Contentful Javascript API docs](https://contentful.github.io/contentful.js/contentful/9.1.18/)
+* [Contentful API Reference](https://www.contentful.com/developers/docs/references/content-delivery-api/#/introduction/authentication)
+
+* [contentful.js Example usage](https://github.com/contentful/the-example-app.nodejs/blob/master/services/contentful.js)
 
 * [Tailwind in 100s](https://www.youtube.com/watch?v=mr15Xzb1Ook)
 
@@ -50,13 +52,22 @@ To run the project in development, you must have Node.js and npm installed (sear
 npm i
 ```
 
-This will install all of the external libraries used by the project. Then, run:
+This will install all of the external libraries used by the project. You'll also need to set up a few environment variables that configure Contentful and caching. Create a file called `.env` that sets the following variables:
+
+```
+CACHING_MAX_AGE
+CONTENTFUL_ACCESS_TOKEN
+CONTENTFUL_ENVIRONMENT
+CONTENTFUL_SPACE
+```
+
+Now you're ready to go! Run:
 
 ```bash
 npm run dev
 ```
 
-This will start a local development server that hosts the website at localhost:3000, and refreshes every time you make a change to the code.
+This will start a local development server that hosts the website at localhost:3000, and refreshes every time you make a change.
 
 ## Color Scheme
 
@@ -67,7 +78,6 @@ For colors, we will use tailwind's default greys, as well as a few custom blues 
 500: '#006FB2', //slightly darkened dssd logo blue, good for text on light background
 900: '#0D1C26' //very dark blue for text or background
 ```
-
 
 
 
