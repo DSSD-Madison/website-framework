@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 //Caches for 10 minutes, change this to be much longer eventually
-Astro.response.headers.set("Cache-Control", "max-age=600")
+Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_MAX_AGE}`)
 ---
 
 <Layout title="DSSD Madison">
