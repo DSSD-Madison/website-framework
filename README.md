@@ -81,7 +81,12 @@ For colors, we will use tailwind's default greys, as well as a few custom blues 
 
 ## Content Model
 
-You can explore the content model by utilizing the `getContentTypes` function defined in [contentful.js](src/services/contentful.js). For example, the content model will be printed each time an uncached request for the homepage is made by uncommenting line 8 in [index.astro](src/pages/index.astro).
+You can explore the content model by utilizing the `getContentTypes` function defined in [contentful.js](src/services/contentful.js). For example, the content model will be printed each time an uncached request for the homepage is made by uncommenting these lines in [index.astro](src/pages/index.astro):
+
+```Javascript
+import { getContentTypes } from '../services/contentful';
+console.log(await getContentTypes())
+```
 
 
 
