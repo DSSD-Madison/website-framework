@@ -10,7 +10,43 @@ Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_M
 
 <Layout title="DSSD Madison">
 	<main>
-		<h1 class="text-2xl text-center p-4 text-gray-700">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
+		<nav class="flex bg-blue-200 text-lg ">
+			<div class="flex mr-auto">
+				<a href="#">
+					<div class="p-6 bg-blue-400 text-white hover:bg-blue-600">
+						HOME
+					</div>
+				</a>
+			</div>
+			<div class="flex ml-auto">
+				<a href="#">
+					<div class="p-6 bg-blue-400 text-white hover:bg-blue-600">
+						ABOUT
+					</div>
+				</a>
+				<a href="#">
+					<div class="p-6 bg-blue-400 text-white hover:bg-blue-600">
+						PROJECTS
+					</div>
+				</a>
+				<a href="#">
+					<div class="p-6 bg-blue-400 text-white hover:bg-blue-600">
+						PEOPLE
+					</div>
+				</a>
+				<a href="#">
+					<div class="p-6 bg-blue-400 text-white hover:bg-blue-600">
+						BLOG
+					</div>
+				</a>
+				<a href="#">
+					<div class="p-6 bg-blue-400 text-white hover:bg-blue-600">
+						CONTACT
+					</div>
+				</a>
+			</div>
+		</nav>
+		<h1 class="text-2xl text-center p-4 text-gray-700 ">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
 		<section class="bg-blue-900 w-full p-4">
 			<div class="flex justify-center">
 				<div class="max-w-xl">
