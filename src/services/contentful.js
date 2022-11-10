@@ -1,11 +1,4 @@
 import contentful from 'contentful'
-import type { Document } from "@contentful/rich-text-types";
-
-export interface About {
-  title: string;
-  whoWeAre: Document;
-  whatWeDo: Document;
-}
 
 const client = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE,
@@ -18,9 +11,9 @@ export async function getContentTypes() {
   return await client.getContentTypes()
 }
 
-export async function getAbout() : Promise<About>{
+export async function getAbout(){
     let entries = await client.getEntries({ content_type: 'about' });
-    return entries.items[0].fields as About;
+    return entries.items[0].fields;
 }
 
 // export function getHtmlText(content) {
