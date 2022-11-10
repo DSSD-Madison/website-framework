@@ -11,7 +11,6 @@ const about = await getAbout();
 ---
 <Layout title="DSSD Madison - About">
   <main>
-    <h1 class="text-2xl text-center p-4 text-gray-700">{about.title}</h1>
     <h1 class="text-2xl text-center p-4 text-gray-700">Who We Are</h1>
     <article set:html={documentToHtmlString(about.whoWeAre)}></article>
     <h1 class="text-2xl text-center p-4 text-gray-700">What We Do</h1>
