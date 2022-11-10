@@ -11,7 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^3.1.0",
+    "@astrojs/netlify": "^1.2.1",
     "@astrojs/tailwind": "^2.1.1",
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "astro": "^1.5.2",
