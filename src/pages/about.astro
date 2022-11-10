@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getAbout, getHtmlText } from '../services/contentful';
+
+Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_MAX_AGE}`)
+
+// https://docs.astro.build/en/guides/cms/contentful/
+
+const about = await getAbout();
+const whoWeAreContent = about.fields.whoWeAre.content[0].content;
+const whoWeAreText = getHtmlText(whoWeAreContent);
+const whatWeDoContent = about.fields.whatWeDo.content[0].content;
+const whatWeDoText = getHtmlText(whatWeDoContent);
+---
+<Layout title="DSSD Madison - About">
+  <main>
+    <h1 class="text-2xl text-center p-4 text-gray-700">Who We Are</h1>
+    <p set:html={whoWeAreText}></p>
+    <h1 class="text-2xl text-center p-4 text-gray-700">What We Do</h1>
+		<p set:html={whatWeDoText}></p>
+  </main>
+</Layout>
