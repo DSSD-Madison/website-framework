@@ -23,15 +23,15 @@ export async function getAbout() : Promise<About>{
     return entries.items[0].fields as About;
 }
 
-export function getHtmlText(content) {
-  let htmlText = "";
-  for(const element of content) {
-    if(element.nodeType == 'text') {
-      htmlText += element.value;
-    }
-    else if(element.nodeType == 'hyperlink') {
-      htmlText += ('<a class="text-blue-500" href="' + element.data.uri + '">' + element.content[0].value +'<a>');
-    }
-  }
-  return htmlText;
-}
+// export function getHtmlText(content) {
+//   let htmlText = "";
+//   for(const element of content) {
+//     if(element.nodeType == 'text') {
+//       htmlText += element.value;
+//     }
+//     else if(element.nodeType == 'hyperlink') {
+//       htmlText += ('<a class="text-blue-500" href="' + element.data.uri + '">' + element.content[0].value +'<a>');
+//     }
+//   }
+//   return htmlText;
+// }
