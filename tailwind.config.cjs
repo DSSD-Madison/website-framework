@@ -12,8 +12,5 @@ module.exports = {
 				900: '#0D1C26' //very dark blue for text or background
 			}
 		}
-	},
-	plugins: [
-        require('flowbite/plugin')
-    ]
+	}
 }
