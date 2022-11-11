@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a content focused website made using Contentful's Headless CMS and Astro, and deployed to Netlify.
+This project is a content focused website made using Contentful's Headless CMS and Astro, and deployed to Netlify. We will use React and Svelte for especially interactive components, with preference to Svelte because ships significantly less Javascript.
 
 ## Learning Resources
 
@@ -35,6 +35,10 @@ This project is a content focused website made using Contentful's Headless CMS a
 * [Tailwind in 100s](https://www.youtube.com/watch?v=mr15Xzb1Ook)
 
 * [Tailwind Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
+
+* [Svelte](https://svelte.dev/tutorial/basics)
+
+* [React](https://reactjs.org/tutorial/tutorial.html)
 
 ## Project Management
 
