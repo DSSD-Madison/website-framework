@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a content focused website made using Contentful's Headless CMS and Astro, and deployed to Netlify. We will use React and Svelte for especially interactive components, with preference to Svelte because ships significantly less Javascript.
+This project is a content focused website made using Contentful's Headless CMS and Astro, and deployed to Netlify. We will use React and Svelte for especially interactive components, with preference to Svelte because it ships significantly less Javascript.
 
 ## Learning Resources
 
