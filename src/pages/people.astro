@@ -1,11 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Person from '../components/Person.svelte';
 
 ---
 
 <Layout title="DSSD Madison - People">
     <main>
-        <h1 class="text-center">Coming Soon...</h1>
+        <h1 class="text-2xl text-center p-4 text-gray-700">Board</h1>
+        <div class="flex">
+            <Person />
+            <Person />
+            <Person />
+        </div>
+        <div class="bg-slate-200">
+            <h1 class="text-2xl text-center p-4 text-gray-700">Members</h1>
+            <div class="flex">
+                <Person />
+                <Person />
+                <Person />
+            </div>
+        </div>
+        <h1 class="text-2xl text-center p-4 text-gray-700">Alumni</h1>
+        <div class="flex">
+            <Person />
+            <Person />
+            <Person />
+        </div>
     </main>
 </Layout>
