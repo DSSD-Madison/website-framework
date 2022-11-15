@@ -11,7 +11,7 @@ export async function getContentTypes() {
   return await client.getContentTypes()
 }
 
-export async function getAbout() {
-    let entries = await client.getEntries({ content_type: 'about' })
-    return entries.items[0]
+export async function getAbout(){
+    let entries = await client.getEntries({ content_type: 'about' });
+    return entries.items[0].fields;
 }
