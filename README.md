@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a content focused website made using Contentful's Headless CMS and Astro, and deployed to Cloudflare Pages.
+This project is a content focused website made using Contentful's Headless CMS and Astro, and deployed to Netlify. We will use React and Svelte for especially interactive components, with preference to Svelte because it ships significantly less Javascript.
 
 ## Learning Resources
 
@@ -36,13 +36,17 @@ This project is a content focused website made using Contentful's Headless CMS a
 
 * [Tailwind Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
 
+* [Svelte](https://svelte.dev/tutorial/basics)
+
+* [React](https://reactjs.org/tutorial/tutorial.html)
+
 ## Project Management
 
 We will be using a Github Project with 3 sections: Backlog, In Progress, and Done. Issues in the Backlog will represent segments of work to get done, or problems that need to be fixed. 
 
 To contribute to the project, assign an issue in the Backlog to yourself and move it to the In Progress section. Create a new branch off of main and implement the feature/fix/improvement, making commits after completing each subsection of the work. Push your code and move the issue(s) it adresses to Done. Create a pull request (PR) into main with a [closing keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) in the description referencing the issue(s) that are addressed.
 
-PRs will be reviewed by at least one project member before merging. When a PR is merged into main, the new version will automatically be deployed to Cloudflare Pages
+PRs will be reviewed by at least one project member before merging. When a PR is merged into main, the new version will automatically be deployed to Netlify.
 
 ## Development
 

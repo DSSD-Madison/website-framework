@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 // import { getContentTypes } from '../services/contentful';
 
+
 Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_MAX_AGE}`)
 
 //Uncomment out the below line to print out the content model whenever a request is made to the server (unca)
@@ -10,54 +11,6 @@ Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_M
 
 <Layout title="DSSD Madison">
 	<main>
-		<nav class="flex bg-blue-200 text-lg ">
-			<div class="flex mr-auto">
-				<a href="#">
-					<div class="p-6 bg-blue-200 text-gray-700 hover:bg-blue-400">
-						HOME
-					</div>
-				</a>
-			</div>
-			<div class="flex ml-auto">
-				<a href="#">
-					<div class="p-6 bg-blue-200 text-gray-700 hover:bg-blue-400">
-						ABOUT
-					</div>
-				</a>
-				<a href="#">
-					<div class="p-6 bg-blue-200 text-gray-700 hover:bg-blue-400">
-						PROJECTS
-					</div>
-				</a>
-				<a href="#">
-					<div class="p-6 bg-blue-200 text-gray-700 hover:bg-blue-400">
-						PEOPLE
-					</div>
-				</a>
-				<a href="#">
-					<div class="p-6 bg-blue-200 text-gray-700 hover:bg-blue-400">
-						BLOG
-					</div>
-				</a>
-				<a href="#">
-					<div class="p-6 bg-blue-200 text-gray-700 hover:bg-blue-400">
-						CONTACT
-					</div>
-				</a>
-			</div>
-		</nav>
-		<h1 class="text-2xl text-center p-4 text-gray-700 ">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
-		<section class="bg-blue-900 w-full p-4">
-			<div class="flex justify-center">
-				<div class="max-w-xl">
-					<p class="text-gray-200">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur corporis natus modi ullam, maiores eaque libero facilis, odit doloribus amet quaerat fugit nihil repellat, sapiente est tempora a numquam autem!
-					</p>
-					<p class="text-gray-200">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur corporis natus modi ullam, maiores eaque libero facilis, odit doloribus amet quaerat fugit nihil repellat, sapiente est tempora a numquam autem!
-					</p>
-				</div>
-			</div>
-		</section>
+		<h1 class="text-3xl text-center p-4 text-gray-700 ">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
 	</main>
 </Layout>
