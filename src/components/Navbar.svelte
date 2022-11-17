@@ -32,7 +32,7 @@
         {title.toLowerCase().includes('projects') ? 'text-blue-500' : 'text-gray-700'}" href="/projects">Projects</a>
     <a class="hidden md:block hover:text-blue-400 transition-colors 
         {title.toLowerCase().includes('people') ? 'text-blue-500' : 'text-gray-700'}" href="/people">People</a>
-    <a class="hidden md:block bg-blue-400 rounded px-4 py-2 text-gray-100 hover:bg-blue-500 transition-colors"          href="MailTo:dssdmadison@dssdglobal.org">Contact</a>
+    <a class="hidden md:block bg-blue-400 rounded px-4 py-2 text-gray-100 hover:bg-blue-500 transition-colors" href="MailTo:dssdmadison@dssdglobal.org" target="_blank">Contact</a>
 </nav>
 <div class="relative">
     {#if showMenu}
@@ -41,7 +41,7 @@
             <a class="p-2 w-full text-center hover:text-blue-400 transition-colors {title.toLowerCase().includes('about') ? 'text-blue-500' : 'text-gray-700'}" href="/about">About</a>
             <a class="p-2 w-full text-center hover:text-blue-400 transition-colors {title.toLowerCase().includes('projects') ? 'text-blue-500' : 'text-gray-700'}" href="/projects">Projects</a>
             <a class="p-2 w-full text-center hover:text-blue-400 transition-colors {title.toLowerCase().includes('people') ? 'text-blue-500' : 'text-gray-700'}" href="/people">People</a>
-            <a class="p-2 w-full text-center bg-blue-400 rounded px-4 py-2 text-gray-100 hover:bg-blue-500 transition-colors" href="MailTo:dssdmadison@dssdglobal.org">Contact</a>
+            <a class="p-2 w-full text-center bg-blue-400 rounded px-4 py-2 text-gray-100 hover:bg-blue-500 transition-colors" href="MailTo:dssdmadison@dssdglobal.org" target="_blank">Contact</a>
         </div>
     {/if}
 </div>
