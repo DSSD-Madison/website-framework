@@ -14,7 +14,7 @@
     <a class="flex flex-nowrap text-dark" href="/">
         <img class="md:h-14 inline-block py-auto float-left self-center" src="/favicon.svg" alt="logo">
         <span class="font-medium pl-5 inline-block self-center w-3/4 md:w-full md:h-full drop-shadow-lg">Data Science for <br> Sustainable Development</span>
-    </a>
+    </a> 
     <button on:click={toggleNavbar}
         type="button"
         class="text-gray-700 hover:text-gray-400 focus:outline-none focus:text-gray-400 md:hidden p-2"
