@@ -15,3 +15,8 @@ export async function getAbout(){
     let entries = await client.getEntries({ content_type: 'about' });
     return entries.items[0].fields;
 }
+
+export async function getProjects(){
+  let entries = await client.getEntries({ content_type: 'project' });
+  return entries.items;
+}
