@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getAbout } from "../services/contentful";
+import { getAllEntriesOfContentType } from "../services/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 Astro.response.headers.set(
@@ -10,20 +10,18 @@ Astro.response.headers.set(
 
 // https://docs.astro.build/en/guides/cms/contentful/
 
-const about = await getAbout();
+const aboutItems = await getAllEntriesOfContentType('aboutSection');
 ---
 
 <Layout title="DSSD Madison - About">
   <main>
     <div class="flex flex-col lg:flex-row">
-      <div class="p-10 m-10 bg-slate-200 shadow-xl rounded-xl">
-        <h1 class="text-2xl text-center p-4 text-gray-700">Who We Are</h1>
-        <article set:html={documentToHtmlString(about.whoWeAre)}></article>
-      </div>
-      <div class="p-10 m-10 bg-slate-200 shadow-xl rounded-xl">
-        <h1 class="text-2xl text-center p-4 text-gray-700">What We Do</h1>
-        <article set:html={documentToHtmlString(about.whatWeDo)}></article>
-      </div>
+      {aboutItems.map((item) => (
+        <div class="p-10 m-10 bg-slate-200 shadow-xl rounded-xl">
+          <h1 class="text-2xl text-center p-4 text-gray-700">{item.fields.title}</h1>
+          <article set:html={documentToHtmlString(item.fields.info)}></article>
+        </div>
+      ))}
     </div>
   </main>
 </Layout>
