@@ -11,12 +11,12 @@ export async function getContentTypes() {
   return await client.getContentTypes()
 }
 
-export async function getAbout(){
-    let entries = await client.getEntries({ content_type: 'about' });
-    return entries.items[0].fields;
+export async function getAllEntriesOfContentType(content_type) {
+  let entries = await client.getEntries({ content_type })
+  return entries.items
 }
 
-export async function getProjects(){
-  let entries = await client.getEntries({ content_type: 'project' });
-  return entries.items;
+export async function getAssetsByTitle(title) {
+  let assets = await client.getAssets({ title })
+  return assets.items
 }

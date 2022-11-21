@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getProjects } from "../services/contentful";
+import { getAllEntriesOfContentType } from "../services/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 Astro.response.headers.set(
@@ -10,7 +10,7 @@ Astro.response.headers.set(
 
 // https://docs.astro.build/en/guides/cms/contentful/
 
-const projects = await getProjects();
+const projects = await getAllEntriesOfContentType('project');
 ---
 
 <Layout title="DSSD Madison - Projects">
