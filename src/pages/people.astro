@@ -1,10 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Person from '../components/Person.astro';
+import { getAllEntriesOfContentType } from "../services/contentful";
+
+const people = await getAllEntriesOfContentType('member');
 ---
 
 <Layout title="DSSD Madison - People">
-    <main>
-        <h1 class="text-center">Coming Soon...</h1>
+    <main class="flex justify-center">
+        <div class="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-6">
+            {
+                people.map((person) => (
+                    <Person data={person.fields} />
+                ))
+            }
+        </div>
     </main>
 </Layout>
