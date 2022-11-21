@@ -1,11 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { getAllEntriesOfContentType } from "../services/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
+Astro.response.headers.set(
+    "Cache-Control",
+    `max-age=${import.meta.env.CACHING_MAX_AGE}`
+);
 
+// https://docs.astro.build/en/guides/cms/contentful/
+
+const projects = await getAllEntriesOfContentType('project');
 ---
 
 <Layout title="DSSD Madison - Projects">
     <main>
-        <h1 class="text-center">Coming Soon...</h1>
+        <div class="grid grid-cols-2">
+            {
+                projects.map((post) => (
+                    <div class="p-10 m-10 bg-slate-200 shadow-xl rounded-xl">
+                        <h1 class="text-2xl text-center p-4 text-gray-700">
+                            {post.fields.title}
+                        </h1>
+                        <article set:html={documentToHtmlString(post.fields.description)}></article>
+                    </div>
+                ))
+            }
+        </div>
     </main>
 </Layout>
