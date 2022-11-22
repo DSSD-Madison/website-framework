@@ -4,6 +4,8 @@ export interface Props {
 }
 
 import Navbar from '../components/Navbar.svelte'
+import 'animate.css';
+import '../style.css'
 
 const { title } = Astro.props;
 ---
@@ -19,6 +21,8 @@ const { title } = Astro.props;
 	</head>
 	<body class="bg-gray-100">
 		<Navbar client:load title={title}/>
-		<slot />
+		<div class="">
+			<slot/>
+		</div>
 	</body>
 </html>

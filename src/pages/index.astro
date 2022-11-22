@@ -11,6 +11,15 @@ Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_M
 
 <Layout title="DSSD Madison">
 	<main>
-		<h1 class="text-3xl text-center p-4 text-gray-700 ">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
+		<div class="mt-32 lg:grid grid-cols-2 gap-4 place-items-center">
+			<div class="animate__animated animate__jackInTheBox">
+				<h1 class="text-5xl text-center p-4 text-gray-700 lg:ml-28">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
+			</div>
+			<div class="opacity-0 lg:opacity-100 animate__animated animate__fadeIn">
+				<img class="h-96" src="/laptop.png" alt="img">
+			</div>
+		</div>
+		
+		
 	</main>
 </Layout>

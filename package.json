@@ -15,6 +15,7 @@
     "@astrojs/svelte": "^1.0.2",
     "@astrojs/tailwind": "^2.1.1",
     "@contentful/rich-text-html-renderer": "^15.13.1",
+    "animate.css": "^4.1.1",
     "astro": "^1.5.2",
     "contentful": "^9.2.10",
     "svelte": "^3.53.1",
