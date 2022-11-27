@@ -12,5 +12,5 @@ if (data.photo) {
     <img class="md:h-20 inline-block py-auto self-center m-2 rounded-full" src={img ? img : "/no-user-img.svg"} alt="image">
     <p class="text-lg">{data.fullName}</p>
     <p class="text-sm">{data.role} {data.graduated && "- Graduate"}</p>
-    {data.email && <a class="inline-block bg-blue-400 rounded text-gray-100 hover:bg-blue-500 transition-colors mt-5" href={"mailto:" + data.email} target="_blank">Contact</a>}
+    {data.email && <a class="inline-block bg-blue-400 rounded text-gray-100 hover:bg-blue-500 transition-colors mt-5 pb-1" href={"mailto:" + data.email} target="_blank">Contact</a>}
 </div>
