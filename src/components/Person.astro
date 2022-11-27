@@ -1,6 +1,16 @@
-<div class="m-4 p-1 rounded border-2 border-black w-48">
-    <img class="md:h-14 inline-block py-auto float-left self-center m-2" src="/favicon.svg" alt="image">
-    <p>Name</p>
-    <p>Year</p>
-    <p>About</p>
+---
+
+const {data} = Astro.props;
+
+let img;
+if (data.photo) {
+    img = data.photo.fields.file.url;
+}
+---
+
+<div class="m-4 p-1 shadow-xl rounded-xl w-48 flex flex-col p-5 gray-1 bg-slate-200 text-center">
+    <img class="md:h-20 inline-block py-auto self-center m-2 rounded-full" src={img ? img : "/no-user-img.svg"} alt="image">
+    <p class="text-lg">{data.fullName}</p>
+    <p class="text-sm">{data.role} {data.graduated && "- Graduate"}</p>
+    {data.email && <a class="inline-block bg-blue-400 rounded text-gray-100 hover:bg-blue-500 transition-colors mt-5" href={"mailto:" + data.email} target="_blank">Contact</a>}
 </div>
