@@ -20,6 +20,6 @@ const { title } = Astro.props;
 	<body class="bg-gray-100">
 		<Navbar client:load title={title}/>
 		<slot />
-		<div style="position: absolute; bottom: 8px; right: 8px; width: 320px; text-align:bottom">Pre-release: content and designs are not final</div>
+		<div style="position: absolute; bottom: 8px; right: 8px; width: 320px; color: '#0D1C26'; text-align:bottom">Pre-release: content and designs are not final</div>
 	</body>
 </html>
