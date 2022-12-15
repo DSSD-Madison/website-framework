@@ -3,7 +3,7 @@ const {data, id} = Astro.props;
 
 let img;
 if (data.photo) {
-    img = data.photo.fields.file.url;
+    img = "https:" + data.photo.fields.file.url;
 }
 ---
 
