@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
 import { getAllEntriesOfContentType } from "../services/contentful";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 Astro.response.headers.set(
     "Cache-Control",
@@ -16,29 +16,9 @@ const projects = await getAllEntriesOfContentType('project');
 <Layout title="DSSD Madison - Projects">
     <main>
         <div class="border-b-2 container p-8 mx-auto border-grey-200 space-y-8">
-            {
-                projects.map((post) => (
-                    <div class="grid md:grid-cols-5 md:p-8 gap-8 hover:bg-gray-200 rounded-2xl transition duration-800">
-                        <div class="col-span-2 md:max-h-96 max-h-32 md:p-8">
-                            <a class="h-full flex" href="http://localhost:3000">
-                                <img class="align-middle object-contain m-auto max-h-full hover:scale-105 transition duration-300" src="https://images.ctfassets.net/71a8biyik8ci/68o32rUGsfVZWtQF8ibnsF/f2b73a203994aac45c8288839dd1893b/coffa.png">
-                            </a>
-                        </div>
-                        <div class="md:col-span-3">
-                            <h3 class="text-2xl font-medium text-blue-500 py-4">{post.fields.title}
-                            </h3>
-                            <p class="text-grey-800 max-w-2xl inline-block pb-4">
-                                <article set:html={documentToHtmlString(post.fields.description)}></article>
-                            </p>
-                            <div>
-                                <h3 class="text-2xl font-medium text-blue-500 py-4">Related SDGs:</h3>
-                                <div class="flex flex-wrap gap-4 md:gap-8">Related SDG Pictures</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-10 border-gray-300 border-t-2"></div>
-                ))
-            }
+            {projects.map((post) => (
+                <Project data={post.fields} id={post.fields.title}/>
+            ))}
         </div>
     </main>
 </Layout>

@@ -1,0 +1,40 @@
+---
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
+const {data, id} = Astro.props;
+
+let img;
+if (data.preview) {
+    img = "https:" + data.preview.fields.file.url;
+}
+---
+
+<div class="grid md:grid-cols-5 md:p-8 gap-8 hover:bg-gray-200 rounded-2xl transition duration-800" id={id}>
+    <div class="col-span-2 md:max-h-96 max-h-32 md:p-8">
+        <a class="h-full flex" href="http://localhost:3000">
+            <img class="align-middle object-contain m-auto max-h-full hover:scale-105 transition duration-300" src={img ? img : "/no-user-img.svg"} alt="image">
+        </a>
+    </div>
+    <div class="md:col-span-3">
+        <h3 class="text-3xl font-medium text-blue-500 py-4">{data.title}
+        </h3>
+        <p class="text-grey-800 max-w-2xl inline-block pb-4">
+            <article set:html={documentToHtmlString(data.description)}></article>
+        </p>
+        <div>
+            <h3 class="text-2xl font-medium text-blue-500 py-4">Related SDGs:</h3>
+            <div class="flex flex-wrap gap-4 md:gap-8">Related SDG Pictures</div>
+        </div>
+        <div>
+            <h3 class="text-2xl font-medium text-blue-500 py-4">Team Members:</h3>
+            <div>
+                <ul>
+                    {data.team.map((member) => {
+                        return (<li><a href={"people#" + member.fields.fullName} class="text-sky-600">{member.fields.fullName}</a></li>)
+                    })}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-10 border-gray-300 border-t-2"></div>
