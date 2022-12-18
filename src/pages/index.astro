@@ -1,16 +1,59 @@
 ---
+import { getAllEntriesOfContentType} from "../services/contentful";
+import { getAssetsByTitle } from "../services/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import Layout from '../layouts/Layout.astro';
+import { getContentTypes } from '../services/contentful';
+//console.log(await getContentTypes())
+
+
+
 // import { getContentTypes } from '../services/contentful';
 
 
 Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_MAX_AGE}`)
 
 //Uncomment out the below line to print out the content model whenever a request is made to the server (unca)
-// console.log(await getContentTypes())
+//console.log(await getContentTypes())
+
+const blogPost = await getAllEntriesOfContentType('blogPost');
+const galleryImage = await getAllEntriesOfContentType('galleryImage');
+const welcomeImage_asset = await getAssetsByTitle("Welcome Image");
+console.log(welcomeImage_asset);
+
 ---
 
 <Layout title="DSSD Madison">
 	<main>
 		<h1 class="text-3xl text-center p-4 text-gray-700 ">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
+        
+		<!--adding welcomeImage title -->
+		<!--adding welcomeImage description -->
+		<!--adding welcomeImage photo -->
+        
+		{welcomeImage_asset.map((item) => (
+			<h2 class={"text-3xl text-center p-4 text-gray-700"}>{item.fields.title}</h2>
+			<p class={"text-3xl text-center p-4 text-gray-700"}>{item.fields.description}</p>
+			<img class="align-middle object-contain m-auto max-h-full hover:scale-105 transition duration-300" src = "item.fields.file" alt="">
+		  ))}
+		
+		<!--adding blogpost title -->
+		<!--adding blogpost author -->
+		<!--adding blogpost body section -->
+		{blogPost.map((item) => (
+			<h2 class={"text-3xl text-center p-4 text-gray-700"}>{item.fields.title}</h2>
+			<author class={"text-3xl text-center p-4 text-gray-700"}>{item.fields.author}</author>
+			<p class={"text-3xl text-center p-4 text-gray-700"}>{item.fields.body}</p>
+		  ))}
+		
+		<!--adding galleryimage title -->
+		<!--adding galleryimage photo -->
+		<!--adding galleryimage caption -->
+		{galleryImage.map((item) => (
+			<h2 class={"text-3xl text-center p-4 text-gray-700"}>{item.fields.title}</h2>
+			<img class="align-middle object-contain m-auto max-h-full hover:scale-105 transition duration-300" src = "item.fields.photo" alt="">
+			<h4 class={"text-3xl text-center p-4 text-gray-700"}>{item.fields.caption}</h4>
+		))}
+
 	</main>
 </Layout>
