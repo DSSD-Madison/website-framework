@@ -1,0 +1,10 @@
+---
+const {data, id} = Astro.props;
+---
+
+<div class=""  id={id}>
+    <div class="mx-64">
+        <p class="text-3xl p-4 text-gray-600">{data.title}</p>
+        <p class="p-4 text-gray-800">{data.content}</p>
+    </div>
+</div>
