@@ -1,5 +1,7 @@
 ---
+import Post from "../components/Post.astro";
 import Layout from '../layouts/Layout.astro';
+import { getAllEntriesOfContentType } from "../services/contentful";
 // import { getContentTypes } from '../services/contentful';
 
 
@@ -7,10 +9,48 @@ Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_M
 
 //Uncomment out the below line to print out the content model whenever a request is made to the server (unca)
 // console.log(await getContentTypes())
+
+// var posts = [
+// 	{
+// 		fields: {
+// 			title: "Sample Post 1",
+// 			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+// 		}
+// 	},
+
+// 	{
+// 		fields: {
+// 			title: "Sample Post 2",
+// 			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+// 		}
+// 	}
+
+// ]
+
+const posts = await getAllEntriesOfContentType('blogPost');
 ---
 
 <Layout title="DSSD Madison">
 	<main>
-		<h1 class="text-3xl text-center p-4 text-gray-700 ">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
+		<div class="flex items-center justify-center h-[88vh] bg-gradient-to-b from-blue-400 to-white-100">
+			<h1 class="text-5xl p-4 text-gray-800">Badgers Coding a Greener Future</h1>
+			
+		</div>
+		<br/><br/><br/><br/>
+		<div>
+			<h1 class="text-4xl p-4 text-gray-800 text-center">Updates</h1><br/><br/>
+			{posts.map((post) => (
+                <Post data={post.fields} id={post.fields.title}/><br/><br/>
+            ))}
+			<div class="flex items-center justify-center">
+				<a class = "text-center text-2xl p-4 text-blue-400 underline" href="https://photricity.com/flw/ajax/">See More</a>
+			</div>
+		</div>
+
+
+
+
+		
+		
 	</main>
 </Layout>
