@@ -1,6 +1,7 @@
 ---
 import Post from "../components/Post.astro";
 import Layout from '../layouts/Layout.astro';
+import { getAllEntriesOfContentType } from "../services/contentful";
 // import { getContentTypes } from '../services/contentful';
 
 
@@ -9,22 +10,24 @@ Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_M
 //Uncomment out the below line to print out the content model whenever a request is made to the server (unca)
 // console.log(await getContentTypes())
 
-var posts = [
-	{
-		fields: {
-			title: "Sample Post 1",
-			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-		}
-	},
+// var posts = [
+// 	{
+// 		fields: {
+// 			title: "Sample Post 1",
+// 			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+// 		}
+// 	},
 
-	{
-		fields: {
-			title: "Sample Post 2",
-			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-		}
-	}
+// 	{
+// 		fields: {
+// 			title: "Sample Post 2",
+// 			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+// 		}
+// 	}
 
-]
+// ]
+
+const posts = await getAllEntriesOfContentType('blogPost');
 ---
 
 <Layout title="DSSD Madison">
@@ -43,6 +46,9 @@ var posts = [
 				<a class = "text-center text-2xl p-4 text-blue-400 underline" href="https://photricity.com/flw/ajax/">See More</a>
 			</div>
 		</div>
+
+
+
 
 		
 		
