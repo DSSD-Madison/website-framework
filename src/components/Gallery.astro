@@ -1,0 +1,17 @@
+---
+const {data, id} = Astro.props;
+
+let img;
+if (data.preview) {
+    img = "https:" + data.preview.fields.photo.url;
+}
+---
+
+<div id={id}>
+    <h2 class={"text-3xl text-center p-4 text-gray-700"}>{data.title}</h2>
+    <div class = "flex items-center justify-center">
+    <img src = {img ? img : "/no-user-img.svg"} alt="">
+    </div>
+    <h2 class={"text-3xl text-center p-4 text-gray-700"}>{data.caption}</h2>
+</div>
+

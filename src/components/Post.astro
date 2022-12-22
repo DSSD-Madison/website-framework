@@ -1,0 +1,14 @@
+---
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+const {data, id} = Astro.props;
+---
+
+<div class=""  id={id}>
+    <div class="mx-64">
+        <div class="flex justify-between">
+            <p class="text-3xl p-4 text-gray-600">{data.title}</p>
+            <a href={"people#" + data.author.fields.fullName} class="text-2xl p-4 text-gray-600 text-right underline">{data.author.fields.fullName}</a>
+        </div>
+        <article class="p-4 text-gray-800" set:html={documentToHtmlString(data.body)}></article>
+    </div>
+</div>
