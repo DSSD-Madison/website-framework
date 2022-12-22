@@ -3,8 +3,8 @@
 const {data, id} = Astro.props;
 
 let img;
-if (data.preview) {
-    img = "https:" + data.preview.fields.file.url;
+if (data.file) {
+    img = "https:" + data.file.url;
 }
 ---
 <div id={id}>
