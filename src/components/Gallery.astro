@@ -2,7 +2,7 @@
 const {data, id} = Astro.props;
 
 let img;
-if (data.preview) {
+if (data.photo) {
     img = "https:" + data.photo.fields.photo.url;
 }
 ---
