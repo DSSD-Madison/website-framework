@@ -17,6 +17,6 @@ export async function getAllEntriesOfContentType(content_type) {
 }
 
 export async function getAssetsByTitle(title) {
-  let assets = await client.getAssets({ title })
+  let assets = await client.getAssets({'fields.title': title })
   return assets.items
 }

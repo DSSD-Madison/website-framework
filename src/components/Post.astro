@@ -1,6 +1,5 @@
 ---
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-
 const {data, id} = Astro.props;
 ---
 
@@ -12,5 +11,4 @@ const {data, id} = Astro.props;
         </div>
         <article class="p-4 text-gray-800" set:html={documentToHtmlString(data.body)}></article>
     </div>
-
 </div>
