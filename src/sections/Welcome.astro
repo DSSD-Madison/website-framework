@@ -1,0 +1,12 @@
+---
+import { getAssetsByTitle } from "../services/contentful";
+
+const {description, file} = (await getAssetsByTitle("Welcome Image"))[0].fields;
+
+---
+<div>
+    <img src={"https:" + file.url} class="h-screen w-screen absolute z-0">
+    <div class={"flex items-center justify-center h-screen z-1 relative"}>
+        <h1 class="text-5xl p-4 text-gray-800">{description}</h1>
+    </div>
+</div>

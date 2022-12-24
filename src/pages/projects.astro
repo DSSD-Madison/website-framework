@@ -8,16 +8,14 @@ Astro.response.headers.set(
     `max-age=${import.meta.env.CACHING_MAX_AGE}`
 );
 
-// https://docs.astro.build/en/guides/cms/contentful/
-
 const projects = await getAllEntriesOfContentType('project');
 ---
 
 <Layout title="DSSD Madison - Projects">
-    <main>
+    <main class="pt-28">
         <div class="border-b-2 container p-8 mx-auto border-grey-200 space-y-8">
-            {projects.map((post) => (
-                <Project data={post.fields} id={post.fields.title}/>
+            {projects.map((project) => (
+                <Project data={project.fields}/>
             ))}
         </div>
     </main>
