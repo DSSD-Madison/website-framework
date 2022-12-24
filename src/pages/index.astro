@@ -1,69 +1,40 @@
 ---
-import Gallery from "../components/Gallery.astro";
 import Post from "../components/Post.astro";
-import Welcome from "../components/Welcome.astro";
+import Welcome from "../sections/Welcome.astro";
 import Layout from '../layouts/Layout.astro';
 import { getAllEntriesOfContentType } from "../services/contentful";
-import { getAssetsByTitle } from "../services/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import Gallery from "../sections/Gallery.astro";
+
 // import { getContentTypes } from '../services/contentful';
 Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_MAX_AGE}`)
 //Uncomment out the below line to print out the content model whenever a request is made to the server (unca)
 // console.log(await getContentTypes())
-// var posts = [
-// 	{
-// 		fields: {
-// 			title: "Sample Post 1",
-// 			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-// 		}
-// 	},
-// 	{
-// 		fields: {
-// 			title: "Sample Post 2",
-// 			content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-// 		}
-// 	}
-// ]
+
 const posts = await getAllEntriesOfContentType('blogPost');
-const gallery = await getAllEntriesOfContentType('galleryImage');
-const welcome = await getAssetsByTitle("Welcome Image");
+const aboutItems = await getAllEntriesOfContentType('aboutSection');
+
 ---
 
 <Layout title="DSSD Madison">
 	<main>
-		<div class="flex items-center justify-center h-[88vh] bg-gradient-to-b from-blue-400 to-gray-100">
-			<h1 class="text-5xl p-4 text-gray-800">Badgers Coding a Greener Future</h1>
-			
-		</div>
-		<br/><br/><br/><br/>
+        <Welcome/>
 
-		<!--add welcome section -->
-		<div>
-			{welcome.map((item) => (
-                <Welcome data={item.fields} id={item.fields.title}/><br/><br/>
-            ))}
-		</div>
-
-		<div>
-			<h1 class="text-4xl p-4 text-gray-800 text-center">Updates</h1><br/><br/>
-			{posts.map((post) => (
-                <Post data={post.fields} id={post.fields.title}/><br/><br/>
-            ))}
-			<div class="flex items-center justify-center">
-				<a class = "text-center text-2xl p-4 text-blue-400 underline" href="https://photricity.com/flw/ajax/">See More</a>
+		{aboutItems.map((item, index) => (
+			<div class={"flex flex-col items-center py-10 px-10 " + (index % 2 == 0 && "bg-zinc-900 text-white")}>
+			  <h1 class={"text-2xl xl:text-3xl mb-5 text-center p-4" + (index % 2 ? "text-gray-700" : "text-white")}>{item.fields.title}</h1>
+			  <article class="max-w-5xl" set:html={documentToHtmlString(item.fields.info)}></article>
 			</div>
-		</div>
+		  ))}
 
-        <!--adding gallery section -->
 		<div>
-			{gallery.map((item) => (
-                <Gallery data={item.fields} id={item.fields.title}/><br/><br/>
+			<h1 class="text-5xl p-6 text-gray-800 text-center">Updates</h1><br/><br/>
+			{posts.map((post) => (
+                <Post data={post.fields}/><br/><br/>
             ))}
 		</div>
 
-
-
-
-		
+		<Gallery/>
 		
 	</main>
 </Layout>
