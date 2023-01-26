@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Person from '../components/Person.astro';
+import PersonGroup from '../components/people/PersonGroup.astro';
 import { getAllEntriesOfContentType } from "../services/contentful";
 
 const people = await getAllEntriesOfContentType('member');
@@ -8,36 +8,8 @@ const people = await getAllEntriesOfContentType('member');
 
 <Layout title="DSSD Madison - People">
     <main>
-        <div class="my-8 p-4">
-            <h1 class="text-2xl text-center p-4 text-gray-700">Board Members</h1>
-            <div>
-              {people.map((person) => {
-                if(!person.fields.graduated && person.fields.role.localeCompare("Member") != 0){
-                    return (<Person data={person.fields} id={person.fields.fullName}/>)
-                }
-              })}
-            </div>
-        </div>
-        <div class="my-8 p-4 bg-gray-300">
-            <h1 class="text-2xl text-center p-4 text-gray-700">Members</h1>
-            <div>
-              {people.map((person) => {
-                if(!person.fields.graduated && person.fields.role.localeCompare("Member") == 0){
-                    return (<Person data={person.fields} id={person.fields.fullName}/>)
-                }
-              })}
-            </div>
-        </div>
-        <div class="my-8 p-4">
-            <h1 class="text-2xl text-center p-4 text-gray-700">Alumni</h1>
-            <div>
-              {people.map((person) => {
-                if(person.fields.graduated){
-                    return (<Person data={person.fields} id={person.fields.fullName}/>)
-                }
-              })}
-            </div>
-        </div>
-
+      <PersonGroup title="Board Members" people={people} filter={(person) => !person.fields.graduated && person.fields.role.localeCompare("Member") != 0} />
+      <PersonGroup title="Members" people={people} filter={(person) => !person.fields.graduated && person.fields.role.localeCompare("Member") == 0} darker={true} hideRoles={true}/>
+      <PersonGroup title="Alumni" people={people} filter={(person) => person.fields.graduated} />
     </main>
 </Layout>
