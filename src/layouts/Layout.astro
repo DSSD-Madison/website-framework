@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.svelte'
 import PrereleaseWarning from '../components/PrereleaseWarning.astro';
 
 const { title } = Astro.props;
+const path = String(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-gray-100">
-		<Navbar client:load title={title}/>
+		<Navbar client:load path={path} />
 		<slot />
 		<PrereleaseWarning/>
 	</body>

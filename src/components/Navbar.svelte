@@ -7,11 +7,32 @@
       showMenu = !showMenu;
     }
 
-    export let title = 'DSSD Madison'
+    export let path = "/"
+
+    const pages = [
+        {
+            name: "About",
+            path: "/"
+        },
+        {
+            name: "Projects",
+            path: "/projects"
+        },
+        {
+            name: "People",
+            path: "/people"
+        },
+        {
+            name: "Contact",
+            path: "mailto:dssdmadison@dssdglobal.org",
+            action: true,
+            newTab: true
+        }
+    ]
 </script>
 
 <nav class="w-full fixed z-50">
-    <div class="px-4 py-6 bg-gray-200 flex items-center justify-around">
+    <div class="px-4 md:px-20 py-6 bg-gray-200 flex items-center justify-between">
 
         <a class="flex flex-nowrap text-dark" href="/">
             <img class="md:h-14 inline-block py-auto float-left self-center" src="/favicon.svg" alt="logo">
@@ -26,24 +47,28 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
         </button>
-        <a class="hidden md:block hover:text-blue-400 transition-colors 
-            {title == 'DSSD Madison' ? 'text-blue-500' : 'text-gray-700'}" href="/">About</a>
-        <a class="hidden md:block hover:text-blue-400 transition-colors 
-            {title.toLowerCase().includes('projects') ? 'text-blue-500' : 'text-gray-700'}" href="/projects">Projects</a>
-        <a class="hidden md:block hover:text-blue-400 transition-colors 
-            {title.toLowerCase().includes('people') ? 'text-blue-500' : 'text-gray-700'}" href="/people">People</a>
-        <a class="hidden md:block bg-blue-400 rounded px-4 py-2 text-gray-100 hover:bg-blue-500 transition-colors" href="MailTo:dssdmadison@dssdglobal.org" target="_blank">Contact</a>
+        <div class="hidden md:flex grow items-center justify-end">
+            {#each pages as page}
+                <a 
+                    class="md:block transition-colors ml-10 text-2xl
+                    {page.action ? 'bg-blue-400 rounded px-4 py-2 text-gray-100 hover:bg-blue-500' : 'hover:text-blue-400'} 
+                    {path == page.path ? 'text-blue-500' : 'text-gray-700'}" 
+                    href="{page.path}" target="{page.newTab && '_blank'}">{page.name}</a>
+            {/each}
+        </div>
 
     </div>
     
 
     <div class="relative">
         {#if showMenu}
-            <div class="md:hidden absolute bg-gray-200 top-0 right-0 w-full flex flex-wrap" transition:slide|local>
-                <a class="p-2 w-full text-center hover:text-blue-400 transition-colors {title == 'DSSD Madison' ? 'text-blue-500' : 'text-gray-700'}" href="/">About</a>
-                <a class="p-2 w-full text-center hover:text-blue-400 transition-colors {title.toLowerCase().includes('projects') ? 'text-blue-500' : 'text-gray-700'}" href="/projects">Projects</a>
-                <a class="p-2 w-full text-center hover:text-blue-400 transition-colors {title.toLowerCase().includes('people') ? 'text-blue-500' : 'text-gray-700'}" href="/people">People</a>
-                <a class="p-2 w-full text-center bg-blue-400 rounded px-4 py-2 text-gray-100 hover:bg-blue-500 transition-colors" href="MailTo:dssdmadison@dssdglobal.org" target="_blank">Contact</a>
+            <div class="md:hidden absolute bg-gray-200 top-0 right-0 w-full flex flex-wrap z-40" transition:slide|local>
+                {#each pages as page}
+                <a 
+                    class="p-2 w-full text-center hover:text-blue-400 transition-colors {path == page.path ? 'text-blue-500' : 'text-gray-700'}
+                    {page.action ? 'bg-blue-400 px-4 py-2 text-gray-100 hover:bg-blue-500' : 'hover:text-blue-400'}" 
+                    href="{page.path}" target="{page.newTab && '_blank'}">{page.name}</a>
+                {/each}
             </div>
         {/if}
     </div>
