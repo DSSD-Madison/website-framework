@@ -1,0 +1,8 @@
+---
+const {title, class: classes, ...props} = Astro.props;
+---
+
+<div class={"pb-14 " + classes} {...props}>
+  <h1 class="text-center text-4xl p-6 pb-8">{title}</h1>
+  <slot />
+</div>

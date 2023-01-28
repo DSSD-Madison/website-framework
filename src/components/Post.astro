@@ -3,8 +3,8 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 const { title, author, body} = Astro.props.data;
 ---
 
-<div>
-    <div class="p-4 mx-4 shadow rounded-3xl	bg-blue-50 lg:mx-64">
+<div class="mb-7">
+    <div class="p-4 mx-4 shadow rounded	bg-gray-100 lg:mx-64">
         <div class="flex justify-between">
             <h1 class="text-gray-600 text-3xl p-4">{title}</h1>
             <a href={"people#" + author.fields.fullName} class="text-2xl p-4 text-gray-600 text-right underline">{author.fields.fullName}</a>

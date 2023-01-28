@@ -1,40 +1,24 @@
 ---
-import Post from "../components/Post.astro";
+
 import Welcome from "../sections/Welcome.astro";
 import Layout from '../layouts/Layout.astro';
-import { getAllEntriesOfContentType } from "../services/contentful";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import Gallery from "../sections/Gallery.astro";
+import Join from "../sections/Join.astro";
+import About from "../sections/About.astro";
+import Updates from "../sections/Updates.astro";
 
 // import { getContentTypes } from '../services/contentful';
 Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_MAX_AGE}`)
 //Uncomment out the below line to print out the content model whenever a request is made to the server (unca)
 // console.log(await getContentTypes())
-
-const posts = await getAllEntriesOfContentType('blogPost');
-const aboutItems = await getAllEntriesOfContentType('aboutSection');
-
 ---
 
 <Layout title="DSSD Madison">
-	<main>
-        <Welcome/>
-
-		{aboutItems.map((item, index) => (
-			<div class={"flex flex-col items-center py-10 px-10 " + (index % 2 == 0 && "bg-zinc-900 text-white")}>
-			  <h1 class={"text-2xl xl:text-3xl mb-5 text-center p-4" + (index % 2 ? "text-gray-700" : "text-white")}>{item.fields.title}</h1>
-			  <article class="max-w-5xl" set:html={documentToHtmlString(item.fields.info)}></article>
-			</div>
-		  ))}
-
-		<div>
-			<h1 class="text-5xl p-6 text-gray-800 text-center">Updates</h1><br/><br/>
-			{posts.map((post) => (
-                <Post data={post.fields}/><br/><br/>
-            ))}
-		</div>
-
-		<Gallery/>
-		
+	<main class="bg-[url('/index/bgPattern.png')]">
+    <Welcome />
+    <About />
+		<Join />
+    <Updates />
+		<Gallery />
 	</main>
 </Layout>
