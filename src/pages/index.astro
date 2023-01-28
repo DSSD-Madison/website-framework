@@ -1,16 +1,24 @@
 ---
+
+import Welcome from "../sections/Welcome.astro";
 import Layout from '../layouts/Layout.astro';
+import Gallery from "../sections/Gallery.astro";
+import Join from "../sections/Join.astro";
+import About from "../sections/About.astro";
+import Updates from "../sections/Updates.astro";
+
 // import { getContentTypes } from '../services/contentful';
-
-
 Astro.response.headers.set("Cache-Control", `max-age=${import.meta.env.CACHING_MAX_AGE}`)
-
 //Uncomment out the below line to print out the content model whenever a request is made to the server (unca)
 // console.log(await getContentTypes())
 ---
 
 <Layout title="DSSD Madison">
-	<main>
-		<h1 class="text-3xl text-center p-4 text-gray-700 ">Welcome to <span class="text-blue-500">DSSD Madison</span>!</h1>
+	<main class="bg-[url('/index/bgPattern.png')]">
+    <Welcome />
+    <About />
+		<Join />
+    <Updates />
+		<Gallery />
 	</main>
 </Layout>

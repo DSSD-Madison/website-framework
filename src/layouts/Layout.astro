@@ -1,11 +1,11 @@
 ---
-export interface Props {
-	title: string;
-}
 
-import Navbar from '../components/Navbar.svelte'
+import Navbar from '../components/Navbar.svelte';
+import Footer from '../components/Footer.astro';
+import PrereleaseWarning from '../components/PrereleaseWarning.astro';
 
 const { title } = Astro.props;
+const path = String(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
@@ -18,7 +18,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-gray-100">
-		<Navbar client:load title={title}/>
+		<Navbar client:load path={path} />
 		<slot />
+		<Footer />
+		<PrereleaseWarning/>
 	</body>
 </html>

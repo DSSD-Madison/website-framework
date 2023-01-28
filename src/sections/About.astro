@@ -1,0 +1,18 @@
+---
+import { getAllEntriesOfContentType } from "../services/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+const aboutItems = await getAllEntriesOfContentType('aboutSection');
+---
+
+<div class="flex flex-col md:flex-row px-4 md:px-10 bg-zinc-900 text-white">
+  {aboutItems.map((item, index) => (
+    <>
+      {(index % 2 == 1) && <div class="hidden md:block w-1 my-10 rounded-full bg-white"></div>}
+      <div class="flex flex-col items-center px-0 py-5 md:p-10">
+        
+        <h1 class={"text-2xl xl:text-3xl mb-5 text-center p-4"}>{item.fields.title}</h1>
+        <article class="max-w-5xl" set:html={documentToHtmlString(item.fields.info)}></article>
+      </div>
+    </>
+  ))}
+</div>
