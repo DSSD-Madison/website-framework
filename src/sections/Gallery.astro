@@ -1,12 +1,12 @@
 ---
 import GalleryImage from "../components/GalleryImage.astro";
 import { getAllEntriesOfContentType } from "../services/contentful";
+import HomeSection from "./HomeSection.astro";
 
 const gallery = await getAllEntriesOfContentType('galleryImage');
 ---
 
-<main class="p-6 mb-20">
-  <h1 class="text-center text-5xl p-6">Image Gallery</h1>
+<HomeSection title="Gallery">
   <div class="overflow-hidden text-gray-700 ">
     <div class="container mx-auto">
       <div class="flex flex-wrap -m-1 md:-m-2 justify-around">
@@ -20,4 +20,4 @@ const gallery = await getAllEntriesOfContentType('galleryImage');
       </div>
     </div>
   </div>
-</main>
+</HomeSection>

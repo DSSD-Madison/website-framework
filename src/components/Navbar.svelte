@@ -23,10 +23,9 @@
             path: "/people"
         },
         {
-            name: "Contact",
-            path: "mailto:dssdmadison@dssdglobal.org",
-            action: true,
-            newTab: true
+            name: "Get Involved",
+            path: "/#get-involved",
+            action: true
         }
     ]
 </script>
