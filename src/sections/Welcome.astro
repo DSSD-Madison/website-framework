@@ -9,7 +9,7 @@ const {description, file} = (await getAssetsByTitle("Welcome Image"))[0].fields;
     <img src={"https:" + file.url} class="h-screen w-screen absolute z-0 brightness-50 object-cover">
     <div class={"flex flex-col items-center justify-center h-screen z-1 relative"}>
         <h1 class="text-5xl p-4 text-gray-100 text-center">{description}</h1>
-        <div class="mt-3">
+        <div class="text-center">
             <ActionButton href="/projects">Projects</ActionButton>
             <ActionButton href="#get-involved">Get Involved</ActionButton>
         </div>
