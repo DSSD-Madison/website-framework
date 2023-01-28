@@ -1,0 +1,8 @@
+---
+const {img, alt, ...props} = Astro.props;
+
+---
+
+<a class="inline-block bg-blue-400 text-gray-100 hover:bg-blue-500 transition-colors p-2 mx-2 h-10 text-xl aspect-square rounded-full relative" {...props}>
+{img ? <img class="h-5 invert absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src={img} alt={alt}> : <slot />}
+</a>

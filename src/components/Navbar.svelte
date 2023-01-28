@@ -49,7 +49,7 @@
         <div class="hidden md:flex grow items-center justify-end">
             {#each pages as page}
                 <a 
-                    class="md:block transition-colors ml-10 text-2xl
+                    class="md:block transition-colors ml-10 text-md lg:text-xl
                     {page.action ? 'bg-blue-400 rounded px-4 py-2 text-gray-100 hover:bg-blue-500' : 'hover:text-blue-400'} 
                     {path == page.path ? 'text-blue-500' : 'text-gray-700'}" 
                     href="{page.path}" target="{page.newTab && '_blank'}">{page.name}</a>

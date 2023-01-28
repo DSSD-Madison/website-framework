@@ -16,6 +16,9 @@ const path = String(Astro.url.pathname);
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script is:inline type="module">
+			window.onhashchange = window.onload = () => window.scrollBy({top: -150, behavior: "smooth"})
+		</script>
 	</head>
 	<body class="bg-gray-100">
 		<Navbar client:load path={path} />
