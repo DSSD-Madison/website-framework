@@ -34,8 +34,8 @@
     <div class="px-4 md:px-20 py-6 bg-gray-200 flex items-center justify-between">
 
         <a class="flex flex-nowrap text-dark" href="/">
-            <img class="md:h-14 inline-block py-auto float-left self-center" src="/favicon.svg" alt="logo">
-            <span class="font-medium pl-5 inline-block self-center w-3/4 md:w-full md:h-full drop-shadow-lg">Data Science for <br> Sustainable Development</span>
+            <img class="h-[3.3rem] md:h-14 inline-block py-auto float-left self-center" src="/favicon.svg" alt="logo">
+            <span class="font-medium pl-5 inline-block self-center w-4/5 md:w-full md:h-full drop-shadow-lg">Data Science for <br> Sustainable Development</span>
         </a>
         <button on:click={toggleNavbar}
             type="button"
