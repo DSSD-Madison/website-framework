@@ -3,33 +3,33 @@ import GalleryImage from "../components/GalleryImage.astro";
 import { getAllEntriesOfContentType } from "../services/contentful";
 import HomeSection from "./HomeSection.astro";
 
-const gallery = await getAllEntriesOfContentType('galleryImage');
+const gallery = await getAllEntriesOfContentType("galleryImage");
 ---
 
 <script>
   // core version + navigation, pagination modules:
-  import Swiper, { Navigation, Pagination, EffectCards } from 'swiper';
+  import Swiper, { Navigation, Pagination, EffectCards } from "swiper";
   // import Swiper and modules styles
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
 
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper(".swiper", {
     modules: [Navigation, Pagination, EffectCards],
     
-    effect: 'cards',
+    effect: "cards",
     grabCursor: true,
     autoHeight: true,
 
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
     },
 
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     }
   });
 </script>
@@ -47,10 +47,10 @@ const gallery = await getAllEntriesOfContentType('galleryImage');
         </div>
       ))}
     </div>
-    <!-- If we need pagination -->
+    <!-- Pagination -->
     <div class="swiper-pagination text-blue-400 !bottom-1"></div>
   
-    <!-- If we need navigation buttons -->
+    <!-- Navigation buttons -->
     <div class="swiper-button-prev ml-4 text-blue-400"></div>
     <div class="swiper-button-next mr-4 text-blue-400"></div>
   </div>
