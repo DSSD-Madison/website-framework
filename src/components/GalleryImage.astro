@@ -5,7 +5,7 @@ const {title, caption, photo} = Astro.props.data;
 
 <main class="relative">
     <img src = {photo.fields.file.url} alt={title} class="block object-cover object-center w-full h-full rounded shadow">
-    <div class="w-full absolute bottom-0 bg-black bg-opacity-50 p-4 pb-6 rounded">
+    <div class="w-full absolute bottom-0 bg-black bg-opacity-50 p-4 rounded-b">
         <h2 class="text-md text-center text-white">{caption}</h2>
     </div>
 </main>

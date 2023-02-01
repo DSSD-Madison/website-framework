@@ -6,52 +6,18 @@ import HomeSection from "./HomeSection.astro";
 const gallery = await getAllEntriesOfContentType("galleryImage");
 ---
 
-<script>
-  // core version + navigation, pagination modules:
-  import Swiper, { Navigation, Pagination, EffectCards } from "swiper";
-  // import Swiper and modules styles
-  import "swiper/css";
-  import "swiper/css/navigation";
-  import "swiper/css/pagination";
-
-  const swiper = new Swiper(".swiper", {
-    modules: [Navigation, Pagination, EffectCards],
-    
-    effect: "cards",
-    grabCursor: true,
-    autoHeight: true,
-
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    }
-  });
-</script>
-
 <HomeSection title="Gallery">
-  <div class="swiper md:w-1/2 w-full px-4">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      {gallery.map((item) => (
-        <div class="swiper-slide">
-          <div class="mx-auto">
-            <GalleryImage data={item.fields}/>
+  <div class="overflow-hidden text-gray-700 ">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap mx-3 -m-1 md:-m-2 justify-around">
+        {gallery.map((item) => (
+          <div class="flex flex-wrap md:w-1/2 w-full">
+            <div class="w-full p-1 md:p-2">
+              <GalleryImage data={item.fields}/>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-    <!-- Pagination -->
-    <div class="swiper-pagination text-blue-400 !bottom-1"></div>
-  
-    <!-- Navigation buttons -->
-    <div class="swiper-button-prev ml-4 text-blue-400"></div>
-    <div class="swiper-button-next mr-4 text-blue-400"></div>
   </div>
 </HomeSection>
