@@ -5,9 +5,9 @@ const {preview, title, description, team} = Astro.props.data;
 
 ---
 
-<div class="grid md:grid-cols-5 md:p-8 gap-8 hover:bg-gray-200 rounded-2xl transition duration-800">
+<div class="grid md:grid-cols-5 md:p-8 gap-8 grouphover:bg-gray-200 rounded-2xl transition duration-800">
     <div class="col-span-2 md:max-h-96 max-h-32 md:p-8">
-        <img class="align-middle object-contain m-auto max-h-full hover:scale-105 transition duration-300" src={"https:" + preview.fields.file.url} alt="image">
+        <img class="align-middle object-contain m-auto max-h-full group-hover:scale-105 transition duration-300" src={"https:" + preview.fields.file.url} alt="image">
     </div>
     <div class="md:col-span-3">
         <h3 class="text-3xl font-medium text-blue-500 py-4">{title}
