@@ -1,0 +1,5734 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "member",
+        "type": "ContentType",
+        "createdAt": "2022-11-02T02:44:55.602Z",
+        "updatedAt": "2023-01-28T21:18:37.743Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 11,
+        "publishedAt": "2023-01-28T21:18:37.743Z",
+        "firstPublishedAt": "2022-11-02T02:44:55.797Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        }
+      },
+      "displayField": "fullName",
+      "name": "Member",
+      "description": "",
+      "fields": [
+        {
+          "id": "fullName",
+          "name": "Full Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "email",
+          "name": "Email",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^\\w[\\w.-]*@([\\w-]+\\.)+[\\w-]+$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "photo",
+          "name": "Photo",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "role",
+          "name": "Role",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "graduated",
+          "name": "Graduated?",
+          "type": "Boolean",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "linkedIn",
+          "name": "LinkedIn",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "personalWebsite",
+          "name": "Personal Website",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "project",
+        "type": "ContentType",
+        "createdAt": "2022-11-02T02:50:35.096Z",
+        "updatedAt": "2022-11-02T15:38:24.860Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 17,
+        "publishedAt": "2022-11-02T15:38:24.860Z",
+        "firstPublishedAt": "2022-11-02T02:50:35.366Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 9,
+        "version": 18,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Project",
+      "description": "",
+      "fields": [
+        {
+          "id": "preview",
+          "name": "Preview",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": true,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "team",
+          "name": "Team",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "RichText",
+          "localized": true,
+          "required": true,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ],
+              "message": "Only bold, italic, underline, and code marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "table",
+                "hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline",
+                "entry-hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to Url, link to asset, inline entry, and link to entry nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "blogPost",
+        "type": "ContentType",
+        "createdAt": "2022-11-02T15:21:56.407Z",
+        "updatedAt": "2022-11-02T15:21:56.788Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2022-11-02T15:21:56.788Z",
+        "firstPublishedAt": "2022-11-02T15:21:56.788Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Blog Post",
+      "description": "",
+      "fields": [
+        {
+          "id": "author",
+          "name": "Author",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "body",
+          "name": "Body",
+          "type": "RichText",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ],
+              "message": "Only bold, italic, underline, and code marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "table",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to Url, link to entry, link to asset, and inline entry nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "galleryImage",
+        "type": "ContentType",
+        "createdAt": "2022-11-02T15:33:44.618Z",
+        "updatedAt": "2022-11-02T18:25:03.252Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-11-02T18:25:03.252Z",
+        "firstPublishedAt": "2022-11-02T15:33:44.895Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Gallery Image",
+      "description": "",
+      "fields": [
+        {
+          "id": "photo",
+          "name": "Photo",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "tags",
+          "name": "Tags",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "caption",
+          "name": "Caption",
+          "type": "Symbol",
+          "localized": true,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "aboutSection",
+        "type": "ContentType",
+        "createdAt": "2022-11-21T08:18:54.609Z",
+        "updatedAt": "2022-11-21T08:18:54.801Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2022-11-21T08:18:54.801Z",
+        "firstPublishedAt": "2022-11-21T08:18:54.801Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "About Section",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "info",
+          "name": "info",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ],
+              "message": "Only bold, italic, underline, and code marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "table",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to Url, link to entry, link to asset, and inline entry nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "getInvolvedSection",
+        "type": "ContentType",
+        "createdAt": "2023-01-28T16:38:03.831Z",
+        "updatedAt": "2023-01-28T16:38:04.328Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2023-01-28T16:38:04.328Z",
+        "firstPublishedAt": "2023-01-28T16:38:04.328Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        }
+      },
+      "displayField": "heading",
+      "name": "Get Involved Section",
+      "description": "",
+      "fields": [
+        {
+          "id": "heading",
+          "name": "Heading",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "text",
+          "name": "Text",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "path",
+          "name": "Path",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "x00i2tlytr27",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 12,
+        "createdAt": "2022-11-02T02:44:55.919Z",
+        "createdBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2023-01-28T21:18:38.585Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5GGVmfpRHFwdTrrsttSf10",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "member",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "editors": [
+        {
+          "widgetId": "default-editor",
+          "widgetNamespace": "editor-builtin"
+        },
+        {
+          "widgetId": "tags-editor",
+          "widgetNamespace": "editor-builtin"
+        },
+        {
+          "widgetId": "69mKkEFmMO9ue4lwWfto2C",
+          "widgetNamespace": "app"
+        }
+      ],
+      "sidebar": [
+        {
+          "settings": {
+          },
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "66frtrAqmWSowDJzQNDiD",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "703nAvCC2nuDjQCiI5P8e2",
+          "widgetNamespace": "app"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "fullName",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "email",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "photo",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "role",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "graduated",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "linkedIn",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "personalWebsite",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "x00i2tlytr27",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 18,
+        "createdAt": "2022-11-02T02:50:35.494Z",
+        "createdBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-11-02T15:38:25.602Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "project",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "editors": [
+        {
+          "widgetId": "default-editor",
+          "widgetNamespace": "editor-builtin"
+        },
+        {
+          "widgetId": "tags-editor",
+          "widgetNamespace": "editor-builtin"
+        },
+        {
+          "widgetId": "69mKkEFmMO9ue4lwWfto2C",
+          "widgetNamespace": "app"
+        }
+      ],
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "66frtrAqmWSowDJzQNDiD",
+          "widgetNamespace": "app"
+        },
+        {
+          "widgetId": "703nAvCC2nuDjQCiI5P8e2",
+          "widgetNamespace": "app"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "preview",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "team",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "x00i2tlytr27",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2022-11-02T15:21:56.888Z",
+        "createdBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-11-02T15:21:57.726Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "blogPost",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "editors": [
+        {
+          "widgetId": "default-editor",
+          "widgetNamespace": "editor-builtin"
+        },
+        {
+          "widgetId": "tags-editor",
+          "widgetNamespace": "editor-builtin"
+        },
+        {
+          "widgetId": "69mKkEFmMO9ue4lwWfto2C",
+          "widgetNamespace": "app"
+        }
+      ],
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "66frtrAqmWSowDJzQNDiD",
+          "widgetNamespace": "app"
+        },
+        {
+          "widgetId": "703nAvCC2nuDjQCiI5P8e2",
+          "widgetNamespace": "app"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "author",
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "body",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "x00i2tlytr27",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 6,
+        "createdAt": "2022-11-02T15:33:44.962Z",
+        "createdBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-11-02T18:25:03.760Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "galleryImage",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "editors": [
+        {
+          "widgetId": "default-editor",
+          "widgetNamespace": "editor-builtin"
+        },
+        {
+          "widgetId": "tags-editor",
+          "widgetNamespace": "editor-builtin"
+        },
+        {
+          "widgetId": "69mKkEFmMO9ue4lwWfto2C",
+          "widgetNamespace": "app"
+        }
+      ],
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "66frtrAqmWSowDJzQNDiD",
+          "widgetNamespace": "app"
+        },
+        {
+          "widgetId": "703nAvCC2nuDjQCiI5P8e2",
+          "widgetNamespace": "app"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "photo",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "tags",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "caption",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "x00i2tlytr27",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2022-11-21T08:18:54.931Z",
+        "createdBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-11-21T08:18:55.321Z",
+        "updatedBy": {
+          "sys": {
+            "id": "1MGBWZAXNL4nnH3SMg8qrD",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "aboutSection",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "info",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "x00i2tlytr27",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2023-01-28T16:38:04.425Z",
+        "createdBy": {
+          "sys": {
+            "id": "5GGVmfpRHFwdTrrsttSf10",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2023-01-28T16:38:04.917Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5GGVmfpRHFwdTrrsttSf10",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "getInvolvedSection",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "heading",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "text",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "path",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "NxUVRwbWJvoaaLxXaPA9l",
+        "type": "Entry",
+        "createdAt": "2022-11-09T01:49:51.925Z",
+        "updatedAt": "2023-01-28T21:22:53.611Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2023-01-28T21:22:53.611Z",
+        "firstPublishedAt": "2022-11-09T01:52:13.698Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Jack Blake"
+        },
+        "email": {
+          "en-US": "jblake8149@gmail.com"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "hXS1dHmbSUUGf8CAmRFiY"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Vice President"
+        },
+        "graduated": {
+          "en-US": false
+        },
+        "linkedIn": {
+          "en-US": "https://www.linkedin.com/in/jack-h-blake/"
+        },
+        "personalWebsite": {
+          "en-US": "https://jblake.dev"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "7DhgRcsSVXqvlMAkVTAEj0",
+        "type": "Entry",
+        "createdAt": "2022-11-09T01:54:37.137Z",
+        "updatedAt": "2023-01-09T15:52:33.494Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 18,
+        "publishedAt": "2023-01-09T15:52:33.494Z",
+        "firstPublishedAt": "2022-11-09T01:57:56.742Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 19,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "project"
+          }
+        }
+      },
+      "fields": {
+        "preview": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4ErOK3ZUan8lZ0OzNY5Sgf"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Break Free From Plastic"
+        },
+        "team": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "NxUVRwbWJvoaaLxXaPA9l"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "683CzK4Sidn5pIMhffRGhS"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5vxmctVoAjV5tj7wj9Q2u4"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6Q881CqbqFte9epz2YAEji"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5ce3FTYgqfr5B4sT0EWnsH"
+              }
+            }
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Web app that tracks plastic usage avoided through reuse systems at 25 stores in the Philippines. Check it out ",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {
+                      "uri": "https://bffp-backend.web.app/"
+                    },
+                    "content": [
+                      {
+                        "data": {
+                        },
+                        "marks": [
+                        ],
+                        "value": "here",
+                        "nodeType": "text"
+                      }
+                    ],
+                    "nodeType": "hyperlink"
+                  },
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "!",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "3BrOps5bXB9AJpf2StLXS3",
+        "type": "Entry",
+        "createdAt": "2022-11-09T04:42:15.170Z",
+        "updatedAt": "2022-11-10T01:21:55.446Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 18,
+        "publishedAt": "2022-11-10T01:21:55.446Z",
+        "firstPublishedAt": "2022-11-09T04:48:35.041Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 19,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "project"
+          }
+        }
+      },
+      "fields": {
+        "preview": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "28xScT6pfsUjlE3ZaZFQZy"
+            }
+          }
+        },
+        "title": {
+          "en-US": "RVA Green"
+        },
+        "team": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5vxmctVoAjV5tj7wj9Q2u4"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7aLRfzVXCVP0JFve3AHeD5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6oWtXXItQ6ol6zZsA2nCQJ"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5ce3FTYgqfr5B4sT0EWnsH"
+              }
+            }
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Website that visualizes the City of Richmond's Climate Equity Action Plan using React and a home-brewed Content Management System.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "5vxmctVoAjV5tj7wj9Q2u4",
+        "type": "Entry",
+        "createdAt": "2022-11-09T04:43:32.272Z",
+        "updatedAt": "2023-01-18T22:44:49.592Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2023-01-18T22:44:49.592Z",
+        "firstPublishedAt": "2022-11-09T04:44:09.186Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Geoffrey Xue"
+        },
+        "email": {
+          "en-US": "gxue5@wisc.edu"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3kweiJPZ1wTzzxmXDzohPa"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Tech Lead"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "2KLxYm6fLPHa8ULg4gR49N",
+        "type": "Entry",
+        "createdAt": "2022-11-09T04:48:44.777Z",
+        "updatedAt": "2022-11-09T16:16:41.461Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 17,
+        "publishedAt": "2022-11-09T16:16:41.461Z",
+        "firstPublishedAt": "2022-11-09T16:16:41.461Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 18,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "project"
+          }
+        }
+      },
+      "fields": {
+        "preview": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4WW0oDDs3UEBPSLVvq2QBf"
+            }
+          }
+        },
+        "title": {
+          "en-US": "DSIRE API"
+        },
+        "team": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "lJ2pKttOvGkiaAQcoz3sL"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2BdgtsglvzKFC4C13SjqMA"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "683CzK4Sidn5pIMhffRGhS"
+              }
+            }
+          ]
+        },
+        "description": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "RESTful API that allows searching and paginating data about Regulatory Policies and Financial Incentives for clean energy in each US state.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "lJ2pKttOvGkiaAQcoz3sL",
+        "type": "Entry",
+        "createdAt": "2022-11-09T16:04:16.561Z",
+        "updatedAt": "2023-02-23T01:17:15.184Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 12,
+        "publishedAt": "2023-02-23T01:17:15.184Z",
+        "firstPublishedAt": "2022-11-09T16:05:31.875Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Emily Berger"
+        },
+        "email": {
+          "en-US": "eaberger2@wisc.edu"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "55kIGnkinYRavEJ2BG99ln"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Technical Outreach Lead"
+        },
+        "graduated": {
+          "en-US": false
+        },
+        "linkedIn": {
+          "en-US": "https://www.linkedin.com/in/emily-a-berger"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "2BdgtsglvzKFC4C13SjqMA",
+        "type": "Entry",
+        "createdAt": "2022-11-09T16:05:39.037Z",
+        "updatedAt": "2023-01-18T22:45:05.500Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2023-01-18T22:45:05.500Z",
+        "firstPublishedAt": "2022-11-09T16:06:21.650Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Nic Pilcher"
+        },
+        "email": {
+          "en-US": "npilcher@wisc.edu"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "e1xyNY3xLf3itkghnhFMw"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Creative Lead"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "683CzK4Sidn5pIMhffRGhS",
+        "type": "Entry",
+        "createdAt": "2022-11-09T16:13:11.805Z",
+        "updatedAt": "2022-11-09T16:13:49.919Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-11-09T16:13:49.919Z",
+        "firstPublishedAt": "2022-11-09T16:13:49.919Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Aiden Cohen"
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "6Q881CqbqFte9epz2YAEji",
+        "type": "Entry",
+        "createdAt": "2022-11-09T16:17:32.967Z",
+        "updatedAt": "2023-01-12T15:21:57.811Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2023-01-12T15:21:57.811Z",
+        "firstPublishedAt": "2022-11-09T16:17:49.475Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Mikayla Lamping"
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "5ce3FTYgqfr5B4sT0EWnsH",
+        "type": "Entry",
+        "createdAt": "2022-11-09T16:18:01.004Z",
+        "updatedAt": "2023-01-09T16:55:01.586Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2023-01-09T16:55:01.586Z",
+        "firstPublishedAt": "2022-11-09T16:18:14.079Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Jason Lin"
+        },
+        "email": {
+          "en-US": "jlin369@wisc.edu"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6XFbETHyS7JGahMSSClLtH"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "7aLRfzVXCVP0JFve3AHeD5",
+        "type": "Entry",
+        "createdAt": "2022-11-09T16:19:38.469Z",
+        "updatedAt": "2023-01-18T22:44:16.134Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2023-01-18T22:44:16.134Z",
+        "firstPublishedAt": "2022-11-09T16:20:13.711Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Wyatt Webster"
+        },
+        "email": {
+          "en-US": "WCWEBSTER@WISC.EDU"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2kmEiXQMOKjhtAeOdZGOa"
+            }
+          }
+        },
+        "role": {
+          "en-US": "President"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "X8fDEwHZUhkXSNMDfJwWn",
+        "type": "Entry",
+        "createdAt": "2022-11-09T16:21:08.997Z",
+        "updatedAt": "2023-01-18T22:44:36.551Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2023-01-18T22:44:36.551Z",
+        "firstPublishedAt": "2022-11-09T16:21:47.326Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Calder Erickson"
+        },
+        "email": {
+          "en-US": "cherickson@wisc.edu"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "z8DiDy1t1X3zXxhDUZsrw"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Secratary"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "6oWtXXItQ6ol6zZsA2nCQJ",
+        "type": "Entry",
+        "createdAt": "2022-11-10T01:20:29.521Z",
+        "updatedAt": "2023-01-09T16:19:31.797Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2023-01-09T16:19:31.797Z",
+        "firstPublishedAt": "2022-11-10T01:20:43.199Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Samuel Henrichs"
+        },
+        "email": {
+          "en-US": "sbhenrichs@gmail.com"
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "67poMlpl6PPjR9nJc5Ktxj",
+        "type": "Entry",
+        "createdAt": "2022-11-21T08:19:24.261Z",
+        "updatedAt": "2022-11-21T08:19:55.703Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-11-21T08:19:55.703Z",
+        "firstPublishedAt": "2022-11-21T08:19:55.703Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "aboutSection"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Who We Are"
+        },
+        "info": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "DSSD Madison is a student chapter of ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "hyperlink",
+                    "data": {
+                      "uri": "https://dssdglobal.org"
+                    },
+                    "content": [
+                      {
+                        "nodeType": "text",
+                        "value": "Data Science for Sustainable Development",
+                        "marks": [
+                        ],
+                        "data": {
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " that operates out of The University of Wisconsin - Madison. We aim to equip students with the industry experience and supporting community they need to make a real impact on the world, all while implementing projects that do good right now.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "4D9g2Q2QMfJGRWlDhJN36z",
+        "type": "Entry",
+        "createdAt": "2022-11-21T08:20:04.007Z",
+        "updatedAt": "2022-11-21T08:20:14.486Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-11-21T08:20:14.486Z",
+        "firstPublishedAt": "2022-11-21T08:20:14.486Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "aboutSection"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "What We Do"
+        },
+        "info": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "We create software projects that help work towards ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "hyperlink",
+                    "data": {
+                      "uri": "https://sdgs.un.org/goals"
+                    },
+                    "content": [
+                      {
+                        "nodeType": "text",
+                        "value": "the UN's sustainable development goals",
+                        "marks": [
+                        ],
+                        "data": {
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", which focus on environmental, economic, and social issues. We collaborate with global Nonprofits through our parent organization, create local impact through outreach, and help students make friends and build their careers. If you're interested in working with us, feel free to ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "hyperlink",
+                    "data": {
+                      "uri": "MailTo:dssd-madison@dssdglobal.org"
+                    },
+                    "content": [
+                      {
+                        "nodeType": "text",
+                        "value": "email us",
+                        "marks": [
+                        ],
+                        "data": {
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ".",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "6QpkeMx9HGGOlQXZrf96Qo",
+        "type": "Entry",
+        "createdAt": "2022-11-21T08:59:50.903Z",
+        "updatedAt": "2023-02-23T01:12:35.776Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 33,
+        "publishedAt": "2023-02-23T01:12:35.776Z",
+        "firstPublishedAt": "2022-11-21T09:00:53.319Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 34,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "blogPost"
+          }
+        }
+      },
+      "fields": {
+        "author": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "NxUVRwbWJvoaaLxXaPA9l"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Our First Annual Mario Kart Social!"
+        },
+        "body": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "This fall we hosted our first annual Mario Kart social. We had Domino's pizza, and soft drinks, and held a tournament to determine the club Mario Kart Champion. Congrats to Sam Henrichs for the win this year! The tournament was set up as three pods that competed concurrently to determine finalists. ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "2n3ymCj7SaziZEFnfMoxma",
+        "type": "Entry",
+        "createdAt": "2022-11-21T09:01:05.103Z",
+        "updatedAt": "2023-02-01T21:44:01.383Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 34,
+        "publishedAt": "2023-02-01T21:44:01.383Z",
+        "firstPublishedAt": "2022-11-21T09:01:22.905Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 35,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "blogPost"
+          }
+        }
+      },
+      "fields": {
+        "author": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "NxUVRwbWJvoaaLxXaPA9l"
+            }
+          }
+        },
+        "title": {
+          "en-US": "Koe Koe Tech Guest Speakers"
+        },
+        "body": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "We recently had the privilege of receiving a high-level technical overview of the methods and practices used at ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "hyperlink",
+                    "data": {
+                      "uri": "https://koekoetech.meekin.org/"
+                    },
+                    "content": [
+                      {
+                        "nodeType": "text",
+                        "value": "Koe Koe Tech",
+                        "marks": [
+                        ],
+                        "data": {
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", a Myanmar base machine-learning endeavor dedicated to filtering violence, hate speech, and fake news out from social media. We were interested in learning about the challenges of creating language models dealing with multiple languages.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "2Viu490jFCYiaurq6THSyM",
+        "type": "Entry",
+        "createdAt": "2022-11-21T09:07:45.866Z",
+        "updatedAt": "2023-01-09T16:03:58.903Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 14,
+        "publishedAt": "2023-01-09T16:03:58.903Z",
+        "firstPublishedAt": "2022-11-21T09:09:35.988Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 15,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "galleryImage"
+          }
+        }
+      },
+      "fields": {
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2Zb63btShSHjhYA27BoWzT"
+            }
+          }
+        },
+        "tags": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "NxUVRwbWJvoaaLxXaPA9l"
+              }
+            }
+          ]
+        },
+        "caption": {
+          "en-US": "One pod's semi-final round in our 2022 Mario Kart social event."
+        },
+        "title": {
+          "en-US": "Mario Kart Social"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "dut9n5nUxjiaOKIF0AAfZ",
+        "type": "Entry",
+        "createdAt": "2023-01-09T16:17:50.422Z",
+        "updatedAt": "2023-01-09T16:18:23.269Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2023-01-09T16:18:23.269Z",
+        "firstPublishedAt": "2023-01-09T16:18:23.269Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Urmi Shukla"
+        },
+        "email": {
+          "en-US": "ukshukla@wisc.edu"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "7gYRwLN2PHFYx77oDgPfVI"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "5pOoBF9QkG89ujo4emQuBH",
+        "type": "Entry",
+        "createdAt": "2023-01-09T16:20:06.671Z",
+        "updatedAt": "2023-01-09T16:20:39.012Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2023-01-09T16:20:39.012Z",
+        "firstPublishedAt": "2023-01-09T16:20:39.012Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Moniek Smink"
+        },
+        "email": {
+          "en-US": "smink2@wisc.edu"
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "3tlN8HwBZ78NXeYgZuEHJl",
+        "type": "Entry",
+        "createdAt": "2023-01-09T16:21:10.115Z",
+        "updatedAt": "2023-01-09T16:21:36.356Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2023-01-09T16:21:36.356Z",
+        "firstPublishedAt": "2023-01-09T16:21:36.356Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Luke Welsh"
+        },
+        "email": {
+          "en-US": "luke.lw.welsh@gmail.com"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "MvN4vWfKNsGdjK5sUzGE1"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "4khr9BT8kB7LNOIRDIld1G",
+        "type": "Entry",
+        "createdAt": "2023-01-09T16:48:45.504Z",
+        "updatedAt": "2023-01-09T16:49:10.672Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2023-01-09T16:49:10.672Z",
+        "firstPublishedAt": "2023-01-09T16:49:10.672Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Anna Mintz"
+        },
+        "email": {
+          "en-US": "amintz2@wisc.edu"
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "5iYJVZSK38KLIzLjGmheZW",
+        "type": "Entry",
+        "createdAt": "2023-01-09T16:53:14.872Z",
+        "updatedAt": "2023-01-09T16:53:46.740Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2023-01-09T16:53:46.740Z",
+        "firstPublishedAt": "2023-01-09T16:53:46.740Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Sarthak Agrawal"
+        },
+        "email": {
+          "en-US": "skagrawal@wisc.edu"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4R3F380xjHv5eqCYlI9gM6"
+            }
+          }
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "1Pcv6pZfk5zXW3d52snMPM",
+        "type": "Entry",
+        "createdAt": "2023-01-09T16:55:16.041Z",
+        "updatedAt": "2023-01-09T16:55:31.653Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2023-01-09T16:55:31.653Z",
+        "firstPublishedAt": "2023-01-09T16:55:31.653Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Jake Smith"
+        },
+        "email": {
+          "en-US": "jasmith55@wisc.edu"
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "32ngW3h5hewETAklA4rNzn",
+        "type": "Entry",
+        "createdAt": "2023-01-09T16:55:47.258Z",
+        "updatedAt": "2023-04-19T23:15:34.799Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 12,
+        "publishedAt": "2023-04-19T23:15:34.799Z",
+        "firstPublishedAt": "2023-01-09T16:56:11.969Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Max Maeder"
+        },
+        "email": {
+          "en-US": "max.s.maeder@gmail.com"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6QnZr8IB4wlW2Rt2xXm9Y7"
+            }
+          }
+        },
+        "role": {
+          "en-US": "DevOps Lead"
+        },
+        "graduated": {
+          "en-US": false
+        },
+        "linkedIn": {
+          "en-US": "https://www.linkedin.com/in/MaxMaeder/"
+        },
+        "personalWebsite": {
+          "en-US": "https://mmaeder.com"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "1XfzSryG5RNC5llPxfBPmL",
+        "type": "Entry",
+        "createdAt": "2023-01-09T16:56:49.772Z",
+        "updatedAt": "2023-01-09T16:57:09.023Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2023-01-09T16:57:09.023Z",
+        "firstPublishedAt": "2023-01-09T16:57:09.023Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Nathaniel Liu"
+        },
+        "email": {
+          "en-US": "nhliu@wisc.edu"
+        },
+        "role": {
+          "en-US": "Member"
+        },
+        "graduated": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "5B2FzJWVQtk2nMDEB1PzjD",
+        "type": "Entry",
+        "createdAt": "2023-01-09T17:29:43.809Z",
+        "updatedAt": "2023-01-09T17:31:06.436Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2023-01-09T17:31:06.436Z",
+        "firstPublishedAt": "2023-01-09T17:31:06.436Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Ani Venkateshwaran"
+        },
+        "email": {
+          "en-US": "ani.venky@dssdglobal.org"
+        },
+        "photo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "T1IbiiaAEHvAigzrNjki6"
+            }
+          }
+        },
+        "role": {
+          "en-US": "President"
+        },
+        "graduated": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "4TA7RpvSbwZPlBqgunnEiZ",
+        "type": "Entry",
+        "createdAt": "2023-01-12T15:24:56.374Z",
+        "updatedAt": "2023-01-12T15:25:21.341Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2023-01-12T15:25:21.341Z",
+        "firstPublishedAt": "2023-01-12T15:25:21.341Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Jake Romanow"
+        },
+        "role": {
+          "en-US": "Secretary"
+        },
+        "graduated": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "7ILphBGWwVxUGnKyBD8haR",
+        "type": "Entry",
+        "createdAt": "2023-01-12T15:25:38.071Z",
+        "updatedAt": "2023-01-12T15:28:51.647Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2023-01-12T15:28:51.647Z",
+        "firstPublishedAt": "2023-01-12T15:26:05.520Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Nihad Mokkath"
+        },
+        "role": {
+          "en-US": "Creative Lead"
+        },
+        "graduated": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "5JznQEyKf9Ko5pzQKiuUzP",
+        "type": "Entry",
+        "createdAt": "2023-01-12T15:26:22.379Z",
+        "updatedAt": "2023-01-12T15:27:38.464Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2023-01-12T15:27:38.464Z",
+        "firstPublishedAt": "2023-01-12T15:27:38.464Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "member"
+          }
+        }
+      },
+      "fields": {
+        "fullName": {
+          "en-US": "Callan Patel"
+        },
+        "role": {
+          "en-US": "Technical Outreach Lead"
+        },
+        "graduated": {
+          "en-US": true
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "6Vwsc8HKqwZCrCBfDwmCuY",
+        "type": "Entry",
+        "createdAt": "2023-01-28T16:38:12.047Z",
+        "updatedAt": "2023-01-30T19:34:31.787Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 12,
+        "publishedAt": "2023-01-30T19:34:31.787Z",
+        "firstPublishedAt": "2023-01-28T16:39:12.519Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "getInvolvedSection"
+          }
+        }
+      },
+      "fields": {
+        "heading": {
+          "en-US": "Apply"
+        },
+        "text": {
+          "en-US": "Apply to join our elite team of programmers"
+        },
+        "path": {
+          "en-US": "https://forms.gle/1uZatyk19rgDxVb97"
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1hVpKD9lwKTLrURiLE2kul"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "1GPwxFzbunxxWnWY7YtGc9",
+        "type": "Entry",
+        "createdAt": "2023-01-28T16:39:22.431Z",
+        "updatedAt": "2023-02-24T23:08:48.308Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 21,
+        "publishedAt": "2023-02-24T23:08:48.308Z",
+        "firstPublishedAt": "2023-01-28T16:39:44.647Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 22,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "getInvolvedSection"
+          }
+        }
+      },
+      "fields": {
+        "heading": {
+          "en-US": "Contact Us"
+        },
+        "text": {
+          "en-US": "Blocked by technical barriers on your sustainable development initiative? Get in contact, we'd love to work with you"
+        },
+        "path": {
+          "en-US": "mailto:dssdmadison@dssdglobal.org"
+        },
+        "image": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1zzkG5oo30fsmUZu5yPdDF"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "hXS1dHmbSUUGf8CAmRFiY",
+        "type": "Asset",
+        "createdAt": "2022-11-09T01:50:29.047Z",
+        "updatedAt": "2022-11-09T01:50:58.206Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-11-09T01:50:58.206Z",
+        "firstPublishedAt": "2022-11-09T01:50:58.206Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jack Blake Headshot"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/hXS1dHmbSUUGf8CAmRFiY/08956e1b8b0b5433fe3c983a92b3bb16/IMG_1216_2.jpg",
+            "details": {
+              "size": 1207337,
+              "image": {
+                "width": 3024,
+                "height": 3024
+              }
+            },
+            "fileName": "IMG_1216_2.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "4ErOK3ZUan8lZ0OzNY5Sgf",
+        "type": "Asset",
+        "createdAt": "2022-11-09T01:54:54.475Z",
+        "updatedAt": "2022-11-09T01:55:45.595Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-11-09T01:55:45.595Z",
+        "firstPublishedAt": "2022-11-09T01:55:45.595Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "BFFP Demo Gif"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/4ErOK3ZUan8lZ0OzNY5Sgf/98c8fa63279f269bf8d458d2166c677a/bffp.gif",
+            "details": {
+              "size": 2078842,
+              "image": {
+                "width": 600,
+                "height": 329
+              }
+            },
+            "fileName": "bffp.gif",
+            "contentType": "image/gif"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "28xScT6pfsUjlE3ZaZFQZy",
+        "type": "Asset",
+        "createdAt": "2022-11-09T04:42:19.620Z",
+        "updatedAt": "2022-11-09T04:42:47.510Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-11-09T04:42:47.510Z",
+        "firstPublishedAt": "2022-11-09T04:42:47.510Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "RVA Green Image"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/28xScT6pfsUjlE3ZaZFQZy/d80f43d6a7c3221ac14521ce031c1391/rva.png",
+            "details": {
+              "size": 242446,
+              "image": {
+                "width": 512,
+                "height": 287
+              }
+            },
+            "fileName": "rva.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "4WW0oDDs3UEBPSLVvq2QBf",
+        "type": "Asset",
+        "createdAt": "2022-11-09T16:03:08.130Z",
+        "updatedAt": "2022-11-09T16:03:47.047Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-11-09T16:03:47.047Z",
+        "firstPublishedAt": "2022-11-09T16:03:47.047Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "NC Clean Energy Logo"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/4WW0oDDs3UEBPSLVvq2QBf/495053e60d768348bdb839dfa94552e5/NCCETC-Horizontal-Logo.png",
+            "details": {
+              "size": 19772,
+              "image": {
+                "width": 1282,
+                "height": 261
+              }
+            },
+            "fileName": "NCCETC-Horizontal-Logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "1cotVkMUVLiRGNOOWB7BE7",
+        "type": "Asset",
+        "createdAt": "2022-11-21T08:24:20.511Z",
+        "updatedAt": "2023-02-01T22:43:14.171Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 34,
+        "publishedAt": "2023-02-01T22:43:14.171Z",
+        "firstPublishedAt": "2022-11-21T08:26:07.665Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        },
+        "publishedCounter": 7,
+        "version": 35,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5GGVmfpRHFwdTrrsttSf10"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Welcome Image"
+        },
+        "description": {
+          "en-US": "Wisconsin Badgers using Technology for a Better World"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/1cotVkMUVLiRGNOOWB7BE7/304b6750c616ad3e3f5473813ab139d2/aerial_UW_long16_3228__1_-min.jpg",
+            "details": {
+              "size": 916116,
+              "image": {
+                "width": 2400,
+                "height": 1598
+              }
+            },
+            "fileName": "aerial_UW_long16_3228 (1)-min.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "2Zb63btShSHjhYA27BoWzT",
+        "type": "Asset",
+        "createdAt": "2022-11-21T09:06:13.238Z",
+        "updatedAt": "2022-11-21T09:06:42.634Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-11-21T09:06:42.634Z",
+        "firstPublishedAt": "2022-11-21T09:06:42.634Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Mario Kart Photo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/2Zb63btShSHjhYA27BoWzT/8f05ab92027fbf53f14b369915527b7a/314869486_2313454595470521_1120089559743906545_n.jpeg",
+            "details": {
+              "size": 132921,
+              "image": {
+                "width": 1080,
+                "height": 809
+              }
+            },
+            "fileName": "314869486_2313454595470521_1120089559743906545_n.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "4R3F380xjHv5eqCYlI9gM6",
+        "type": "Asset",
+        "createdAt": "2023-01-09T16:13:01.092Z",
+        "updatedAt": "2023-01-09T16:13:50.797Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2023-01-09T16:13:50.797Z",
+        "firstPublishedAt": "2023-01-09T16:13:50.797Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Sarthak Agrawal Headshot"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/4R3F380xjHv5eqCYlI9gM6/9b28ef675368a8b0df82460edccf7a76/_DSC0365_-_Sarthak_Agrawal.jpg",
+            "details": {
+              "size": 973901,
+              "image": {
+                "width": 2173,
+                "height": 2241
+              }
+            },
+            "fileName": "_DSC0365 - Sarthak Agrawal.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "6QnZr8IB4wlW2Rt2xXm9Y7",
+        "type": "Asset",
+        "createdAt": "2023-01-09T16:13:01.131Z",
+        "updatedAt": "2023-01-09T16:14:08.088Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2023-01-09T16:14:08.088Z",
+        "firstPublishedAt": "2023-01-09T16:14:08.088Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Max Maeder Headshot"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/6QnZr8IB4wlW2Rt2xXm9Y7/d408983c490649cd3c1c35f0913e6b0c/headshot_-_Max_Maeder.png",
+            "details": {
+              "size": 673467,
+              "image": {
+                "width": 698,
+                "height": 698
+              }
+            },
+            "fileName": "headshot - Max Maeder.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "MvN4vWfKNsGdjK5sUzGE1",
+        "type": "Asset",
+        "createdAt": "2023-01-09T16:13:01.132Z",
+        "updatedAt": "2023-01-09T16:13:23.566Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2023-01-09T16:13:23.566Z",
+        "firstPublishedAt": "2023-01-09T16:13:23.566Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Luke W Headshot"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/MvN4vWfKNsGdjK5sUzGE1/748b97b7cb86c9e0d7111e1284ee174c/prof_headshot_-_Luke_W.JPG",
+            "details": {
+              "size": 5640657,
+              "image": {
+                "width": 5184,
+                "height": 3456
+              }
+            },
+            "fileName": "prof_headshot - Luke W.JPG",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "7gYRwLN2PHFYx77oDgPfVI",
+        "type": "Asset",
+        "createdAt": "2023-01-09T16:13:01.155Z",
+        "updatedAt": "2023-01-09T16:13:59.157Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2023-01-09T16:13:59.157Z",
+        "firstPublishedAt": "2023-01-09T16:13:59.157Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Urmi Shukla Headshot"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/7gYRwLN2PHFYx77oDgPfVI/796d9ff80155dc0b831235290f556231/thumbnail_IMG_9672_-_Urmi_Shukla.jpg",
+            "details": {
+              "size": 57923,
+              "image": {
+                "width": 584,
+                "height": 584
+              }
+            },
+            "fileName": "thumbnail_IMG_9672 - Urmi Shukla.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "6XFbETHyS7JGahMSSClLtH",
+        "type": "Asset",
+        "createdAt": "2023-01-09T16:13:01.167Z",
+        "updatedAt": "2023-01-09T16:13:38.793Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2023-01-09T16:13:38.793Z",
+        "firstPublishedAt": "2023-01-09T16:13:38.793Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "JASON LIN Headshot"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/6XFbETHyS7JGahMSSClLtH/2dcacf4dfd3637cae6b17717aa6e6021/F7FD9456-A3E7-4965-89A4-365643675A81_-_JASON_LIN.jpeg",
+            "details": {
+              "size": 351576,
+              "image": {
+                "width": 1050,
+                "height": 1400
+              }
+            },
+            "fileName": "F7FD9456-A3E7-4965-89A4-365643675A81 - JASON LIN.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "T1IbiiaAEHvAigzrNjki6",
+        "type": "Asset",
+        "createdAt": "2023-01-09T17:30:37.103Z",
+        "updatedAt": "2023-01-09T17:30:58.322Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2023-01-09T17:30:58.322Z",
+        "firstPublishedAt": "2023-01-09T17:30:58.322Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ani Venkateshwaran Headshot"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/T1IbiiaAEHvAigzrNjki6/0a86398fba217b4814a71074992db010/Ani_Venkateshwaran_Headshot.jpeg",
+            "details": {
+              "size": 3891,
+              "image": {
+                "width": 100,
+                "height": 100
+              }
+            },
+            "fileName": "Ani Venkateshwaran Headshot.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "55kIGnkinYRavEJ2BG99ln",
+        "type": "Asset",
+        "createdAt": "2023-01-12T15:11:14.322Z",
+        "updatedAt": "2023-01-12T15:11:54.683Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2023-01-12T15:11:54.683Z",
+        "firstPublishedAt": "2023-01-12T15:11:54.683Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Emily Berger Headshot"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/55kIGnkinYRavEJ2BG99ln/8bec7367f9cb3bf8c0aa486923b15f4f/Emily_Berger_Headshot.jpeg",
+            "details": {
+              "size": 77846,
+              "image": {
+                "width": 1018,
+                "height": 682
+              }
+            },
+            "fileName": "Emily Berger Headshot.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "3kweiJPZ1wTzzxmXDzohPa",
+        "type": "Asset",
+        "createdAt": "2023-01-12T15:20:38.220Z",
+        "updatedAt": "2023-01-12T15:20:54.311Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2023-01-12T15:20:54.311Z",
+        "firstPublishedAt": "2023-01-12T15:20:54.311Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Geoffrey Xue Headshot"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/3kweiJPZ1wTzzxmXDzohPa/7f9676439cbeee866cb628c67a5cae86/Geoffrey_Xue_Headshot.jpeg",
+            "details": {
+              "size": 31961,
+              "image": {
+                "width": 400,
+                "height": 400
+              }
+            },
+            "fileName": "Geoffrey Xue Headshot.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "z8DiDy1t1X3zXxhDUZsrw",
+        "type": "Asset",
+        "createdAt": "2023-01-12T15:22:12.313Z",
+        "updatedAt": "2023-01-12T15:22:29.224Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2023-01-12T15:22:29.224Z",
+        "firstPublishedAt": "2023-01-12T15:22:29.224Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Calder Erickson Headshot"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/z8DiDy1t1X3zXxhDUZsrw/52ebc8f6b59a51434c2d3af21e0ef0b9/Calder_Erickson_Headshot.jpeg",
+            "details": {
+              "size": 36365,
+              "image": {
+                "width": 400,
+                "height": 400
+              }
+            },
+            "fileName": "Calder Erickson Headshot.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "2kmEiXQMOKjhtAeOdZGOa",
+        "type": "Asset",
+        "createdAt": "2023-01-12T15:23:39.298Z",
+        "updatedAt": "2023-01-12T15:24:09.091Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2023-01-12T15:24:09.091Z",
+        "firstPublishedAt": "2023-01-12T15:24:09.091Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Wyatt Webster Headshot"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/2kmEiXQMOKjhtAeOdZGOa/258a02ec0e4c29c30d07a5d696670236/Wyatt_Webster_Headshot.jpeg",
+            "details": {
+              "size": 172610,
+              "image": {
+                "width": 800,
+                "height": 800
+              }
+            },
+            "fileName": "Wyatt Webster Headshot.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "6pwSixgDg2GvZEW8bqYaG6",
+        "type": "Asset",
+        "createdAt": "2023-01-12T15:24:05.104Z",
+        "updatedAt": "2023-01-30T21:08:31.114Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2023-01-30T21:08:31.114Z",
+        "firstPublishedAt": "2023-01-30T21:08:31.114Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Wyatt Webster Headshot"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/6pwSixgDg2GvZEW8bqYaG6/3f14e9c2b87c89cf84fc2bd06afc84e1/Wyatt_Webster_Headshot.jpeg",
+            "details": {
+              "size": 172610,
+              "image": {
+                "width": 800,
+                "height": 800
+              }
+            },
+            "fileName": "Wyatt Webster Headshot.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "e1xyNY3xLf3itkghnhFMw",
+        "type": "Asset",
+        "createdAt": "2023-01-12T19:36:23.928Z",
+        "updatedAt": "2023-01-12T19:37:06.649Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2023-01-12T19:37:06.649Z",
+        "firstPublishedAt": "2023-01-12T19:37:06.649Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Nic Pilcher Headshot"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/e1xyNY3xLf3itkghnhFMw/626c65b2374071cf8a563af47723d677/Nic_Pilcher_Headshot.jpg",
+            "details": {
+              "size": 466974,
+              "image": {
+                "width": 1706,
+                "height": 1548
+              }
+            },
+            "fileName": "Nic_Pilcher_Headshot.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "6pHRzUtO7yle4IIzWMbih8",
+        "type": "Asset",
+        "createdAt": "2023-01-30T19:28:16.397Z",
+        "updatedAt": "2023-01-30T19:29:12.444Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2023-01-30T19:29:12.444Z",
+        "firstPublishedAt": "2023-01-30T19:29:12.444Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Donate Image"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/6pHRzUtO7yle4IIzWMbih8/f9ad1748525b7f46bd995f058f9ea5e4/WAE-Mt-Rainier-National-Park-Autumn-Shutterstock-150673001-Mike-Peters.jpeg",
+            "details": {
+              "size": 1083071,
+              "image": {
+                "width": 1600,
+                "height": 900
+              }
+            },
+            "fileName": "WAE-Mt-Rainier-National-Park-Autumn-Shutterstock-150673001-Mike-Peters.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "1hVpKD9lwKTLrURiLE2kul",
+        "type": "Asset",
+        "createdAt": "2023-01-30T19:32:54.700Z",
+        "updatedAt": "2023-01-30T19:34:28.467Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2023-01-30T19:34:28.467Z",
+        "firstPublishedAt": "2023-01-30T19:34:28.467Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Apply Image"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/1hVpKD9lwKTLrURiLE2kul/013595df63e95b71e8610fe2a00bf3fb/IMG_2332.jpg",
+            "details": {
+              "size": 1205014,
+              "image": {
+                "width": 4032,
+                "height": 3024
+              }
+            },
+            "fileName": "IMG_2332.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "id": "1zzkG5oo30fsmUZu5yPdDF",
+        "type": "Asset",
+        "createdAt": "2023-01-30T19:34:53.564Z",
+        "updatedAt": "2023-01-30T19:36:16.384Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2023-01-30T19:36:16.384Z",
+        "firstPublishedAt": "2023-01-30T19:36:16.384Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Contact Us Image"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/x00i2tlytr27/1zzkG5oo30fsmUZu5yPdDF/db60d56f20e940d495371fc27c29183c/o-HELPING-OTHERS.jpeg",
+            "details": {
+              "size": 19750,
+              "image": {
+                "width": 2000,
+                "height": 1000
+              }
+            },
+            "fileName": "o-HELPING-OTHERS.jpeg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "1RXXj5J7o8xtsjMxbE6iHP",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x00i2tlytr27"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "41db74ce-b6be-4077-b856-5159c0de288b"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "createdAt": "2022-10-27T16:35:07Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "1MGBWZAXNL4nnH3SMg8qrD"
+          }
+        },
+        "updatedAt": "2022-10-27T16:35:07Z"
+      }
+    }
+  ]
+}
