@@ -43,7 +43,7 @@ This project is a content focused website made using Contentful's Headless CMS a
 
 ## For Other DSSD Hubs: How to make your own copy of the project
 
-1. [fork this repository](https://github.com/DSSD-Madison/madison-website/fork)
+1. [Fork this repository](https://github.com/DSSD-Madison/madison-website/fork)
 
 2. [Create a Netlify account](https://www.netlify.com/), preferably using the GitHub account that forked the repository.
 
