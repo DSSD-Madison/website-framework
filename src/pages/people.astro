@@ -11,6 +11,6 @@ const people = await getAllEntriesOfContentType('member');
     <main class="pt-28">
       <PersonGroup title="Board Members" people={people} filter={(person) => !person.fields.graduated && person.fields.role.localeCompare("Member") != 0} />
       <PersonGroup title="Members" people={people} filter={(person) => !person.fields.graduated && person.fields.role.localeCompare("Member") == 0} darker={true} hideRoles={true}/>
-      <PersonGroup title="Alumni" people={people} filter={(person) => person.fields.graduated} />
+      <PersonGroup title="Former Members" people={people} filter={(person) => person.fields.graduated} />
     </main>
 </Layout>
