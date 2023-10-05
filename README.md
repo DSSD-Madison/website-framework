@@ -1,4 +1,4 @@
-# DSSD Madison Website
+# Student Hub Website Frameworks
 
 ## Overview
 
@@ -41,9 +41,9 @@ This project is a content focused website made using Contentful's Headless CMS a
 * [React](https://reactjs.org/tutorial/tutorial.html)
 
 
-## For Other DSSD Hubs: How to make your own copy of the project
+## For Other Student Hubs: How to make your own copy of the project
 
-1. [Fork this repository](https://github.com/DSSD-Madison/madison-website/fork)
+1. [Fork this repository](https://github.com/DSSD-Madison/student-hub-website-framework/fork)
 
 2. [Create a Netlify account](https://www.netlify.com/), preferably using the GitHub account that forked the repository.
 
