@@ -1,4 +1,4 @@
-# Student Hub Website Frameworks
+# Student Hub Website Framework
 
 ## Overview
 
