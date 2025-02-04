@@ -1,23 +1,41 @@
 ---
-import Person from './Person.astro';
+import Person from "./Person.astro";
 
-const {title, people, filter, darker, hideRoles} = Astro.props;
+const { title, people, filter, darker, hideRoles } = Astro.props;
 
 // Get person's name, rearanged for sorting
 const getName = (person) => {
   return person.fields.fullName.split(" ").reverse().join(" ");
-}
+};
 
-const sortedPeople = people.sort((a, b) => getName(a).localeCompare(getName(b)));
+const getImg = (person) => {
+  if (person.fields.photo) return person.fields.photo.fields.file.url;
+  return null;
+};
+
+const sortPeople = (a, b) => {
+  if (getImg(a) && getImg(b)) return getName(a).localeCompare(getName(b));
+  return getImg(a) ? -1 : 1;
+};
+
+const sortedPeople = people.sort(sortPeople);
 ---
 
-<div class={"my-8 flex flex-col items-center " + (darker && "bg-gray-300")}>
-  <h1 class="text-2xl text-center p-4 text-gray-700">{title}</h1>
-  <div class="m-8 flex flex-wrap justify-center">
-    {sortedPeople.map((person) => {
-      if (filter(person)){
-        return (<Person data={person.fields} id={person.fields.fullName} hideRole={hideRoles}/>)
-      }
-    })}
+<div class={"my-4 flex flex-col items-center " + (darker && "bg-gray-300")}>
+  <h1 class="text-2xl text-center mt-4 text-gray-700">{title}</h1>
+  <div class="mb-4 mx-4 flex flex-wrap justify-center">
+    {
+      sortedPeople.map((person) => {
+        if (filter(person)) {
+          return (
+            <Person
+              data={person.fields}
+              id={person.fields.fullName}
+              hideRole={hideRoles}
+            />
+          );
+        }
+      })
+    }
   </div>
 </div>

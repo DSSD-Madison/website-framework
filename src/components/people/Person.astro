@@ -1,23 +1,63 @@
 ---
-import ContactButton from './ContactButton.astro';
+import ContactButton from "./ContactButton.astro";
 
-const {data, id, hideRole} = Astro.props;
+const { data, id, hideRole } = Astro.props;
 
 let img;
 if (data.photo) {
-    img = data.photo.fields.file.url;
+  img = data.photo.fields.file.url;
 }
 ---
 
-<div class="my-4 mx-10 p-5 pb-20 shadow-xl rounded-xl basis-56 min-h-80 flex flex-col gray-1 bg-slate-200 text-center relative" id={id}>
-    <img class="h-40 inline-block py-auto self-center m-2 rounded-full aspect-square object-cover" src={img ? img : "/people/no-user-img.svg"} alt={data.fullName + "'s profile image"}>
-    <div>
-        <p class="text-2xl my-1">{data.fullName}</p>
-        {!hideRole && <p class="text-xl my-1">{data.graduated && "Former"} {data.role}</p>}
-    </div>
-    <div class="absolute bottom-0 left-0 right-0 p-5">
-        {data.linkedIn && <ContactButton href={data.linkedIn} target="_blank" img="/people/linkedin.svg" alt="View LinkedIn" />}
-        {data.email && <ContactButton href={"mailto:" + data.email} target="_blank" img="/people/email.svg" alt="Send Email" />}
-        {data.personalWebsite && <ContactButton href={data.personalWebsite} target="_blank" img="/people/external-website.svg" alt="View Personal Website" />}
-    </div>
+<div
+  class="p-2 basis-40 flex flex-col text-center relative md:basis-54 md:shadow-md md:rounded-lg md:bg-slate-200 md:m-4"
+  id={id}
+>
+  <img
+    class="h-20 inline-block py-auto self-center m-2 rounded-full aspect-square object-cover md:h-40"
+    src={img ? img : "/people/no-user-img.svg"}
+    alt={data.fullName + "'s profile image"}
+  />
+  <div>
+    <p class="text-xl mt-1">{data.fullName}</p>
+    {
+      !hideRole && (
+        <p class="text-lg">
+          {data.graduated && "Former"} {data.role}
+        </p>
+      )
+    }
+  </div>
+  <div>
+    {
+      data.linkedIn && (
+        <ContactButton
+          href={data.linkedIn}
+          target="_blank"
+          img="/people/linkedin.svg"
+          alt="View LinkedIn"
+        />
+      )
+    }
+    {
+      data.email && (
+        <ContactButton
+          href={"mailto:" + data.email}
+          target="_blank"
+          img="/people/email.svg"
+          alt="Send Email"
+        />
+      )
+    }
+    {
+      data.personalWebsite && (
+        <ContactButton
+          href={data.personalWebsite}
+          target="_blank"
+          img="/people/external-website.svg"
+          alt="View Personal Website"
+        />
+      )
+    }
+  </div>
 </div>
