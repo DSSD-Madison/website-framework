@@ -7,6 +7,14 @@ let img;
 if (data.photo) {
   img = data.photo.fields.file.url;
 }
+
+const winnerStyles =
+  "font-bold bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent";
+
+let nameStyles = "text-xl mt-1";
+if (data.winner) {
+  nameStyles += " " + winnerStyles;
+}
 ---
 
 <div
@@ -19,7 +27,9 @@ if (data.photo) {
     alt={data.fullName + "'s profile image"}
   />
   <div>
-    <p class="text-xl mt-1">{data.fullName}</p>
+    <p class={nameStyles}>
+      {data.fullName}
+    </p>
     {
       !hideRole && (
         <p class="text-lg">
