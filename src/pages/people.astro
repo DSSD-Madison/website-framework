@@ -10,7 +10,33 @@ const people = await getAllEntriesOfContentType('member');
 <Layout title="DSSD Madison - People">
     <main class="pt-28">
       <PersonGroup title="Board Members" people={people} filter={(person) => !person.fields.graduated && person.fields.role.localeCompare("Member") != 0} />
-      <PersonGroup title="Members" people={people} filter={(person) => !person.fields.graduated && person.fields.role.localeCompare("Member") == 0} darker={true} hideRoles={true}/>
-      <PersonGroup title="Former Members" people={people} filter={(person) => person.fields.graduated} />
+      <PersonGroup title="Members" people={people} filter={(person) => !person.fields.graduated && person.fields.role.localeCompare("Member") == 0} darker={true} hideRoles={true} small />
+      <details class="open">
+        <summary class="cursor-pointer text-2xl text-center mt-4 text-gray-700 py-4 my-4 list-none">
+          <div class="pretty-caret"></div>
+          Former Members
+        </summary>
+        <PersonGroup people={people} filter={(person) => person.fields.graduated} small />
+      </details>
     </main>
 </Layout>
+
+<style>
+  .pretty-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    border-top: 0.6rem solid;
+    border-right: 0.4rem solid transparent;
+    border-left: 0.4rem solid transparent;
+    margin-bottom: 0.3rem;
+    transition: transform 0.1s ease-out;
+    transform: rotate(-90deg)
+  }
+
+  details[open] .pretty-caret {
+    transform: rotate(0deg);
+  }
+</style>

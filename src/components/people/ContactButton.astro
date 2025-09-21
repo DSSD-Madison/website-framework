@@ -2,7 +2,7 @@
 const { img, alt, ...props } = Astro.props;
 ---
 
-<a class="inline-block h-10 aspect-square relative" {...props}>
+<a class="inline-block h-10 aspect-square relative hover:-rotate-6 hover:scale-105 transition" {...props}>
   {
     img ? (
       <img

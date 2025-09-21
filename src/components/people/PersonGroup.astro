@@ -1,7 +1,7 @@
 ---
 import Person from "./Person.astro";
 
-const { title, people, filter, darker, hideRoles } = Astro.props;
+const { title, people, filter, darker, hideRoles, small } = Astro.props;
 
 // Get person's name, rearanged for sorting
 const getName = (person) => {
@@ -32,6 +32,7 @@ const sortedPeople = people.sort(sortPeople);
               data={person.fields}
               id={person.fields.fullName}
               hideRole={hideRoles}
+              {small}
             />
           );
         }

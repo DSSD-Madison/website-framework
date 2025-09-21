@@ -1,7 +1,7 @@
 ---
 import ContactButton from "./ContactButton.astro";
 
-const { data, id, hideRole } = Astro.props;
+const { data, id, hideRole, small } = Astro.props;
 
 let img;
 if (data.photo) {
@@ -10,11 +10,11 @@ if (data.photo) {
 ---
 
 <div
-  class="p-2 basis-40 flex flex-col text-center relative md:basis-52 md:shadow-md md:rounded-lg md:bg-slate-200 md:m-4"
+  class:list={[`p-2 flex flex-col text-center relative md:shadow-md md:rounded-lg md:bg-slate-200 hyphens-auto break-words m-1`, { "basis-40 md:basis-52 lg:m-4": !small, "basis-32 w-32 md:basis-40 lg:m-2": small }]}
   id={id}
 >
   <img
-    class="h-20 inline-block py-auto self-center m-2 rounded-full aspect-square object-cover md:h-40"
+    class:list={[`h-20 inline-block py-auto self-center m-2 rounded-full aspect-square object-cover`, { "md:h-40": !small, "md:h-32": small }]}
     src={img ? img : "/people/no-user-img.svg"}
     alt={data.fullName + "'s profile image"}
   />
@@ -28,6 +28,7 @@ if (data.photo) {
       )
     }
   </div>
+  <div class="flex-grow" />
   <div>
     {
       data.linkedIn && (
