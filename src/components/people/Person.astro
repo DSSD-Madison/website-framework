@@ -7,19 +7,40 @@ let img;
 if (data.photo) {
   img = data.photo.fields.file.url;
 }
+
+const isWinner = !!data.winner;
 ---
 
 <div
-  class:list={[`p-2 flex flex-col text-center relative md:shadow-md md:rounded-lg md:bg-slate-200 hyphens-auto break-words m-1`, { "basis-40 md:basis-52 lg:m-4": !small, "basis-32 w-32 md:basis-40 lg:m-2": small }]}
+  class:list={[
+    `p-2 flex flex-col text-center relative md:rounded-lg hyphens-auto break-words m-1`,
+    {
+      "basis-40 md:basis-52 lg:m-4": !small,
+      "basis-32 w-32 md:basis-40 lg:m-2": small,
+      "md:shadow-md md:bg-slate-200": !isWinner,
+      "md:shadow-lg md:shadow-amber-300/40 ring-2 ring-amber-400 bg-gradient-to-b from-amber-50 to-amber-100 md:from-amber-50 md:to-amber-100": isWinner,
+    },
+  ]}
   id={id}
 >
   <img
-    class:list={[`h-20 inline-block py-auto self-center m-2 rounded-full aspect-square object-cover`, { "md:h-40": !small, "md:h-32": small }]}
+    class:list={[
+      `h-20 inline-block py-auto self-center m-2 aspect-square object-cover`,
+      {
+        "md:h-40": !small,
+        "md:h-32": small,
+        "rounded-full": !isWinner,
+        "rounded-full ring-2 ring-amber-400 ring-offset-2": isWinner,
+      },
+    ]}
     src={img ? img : "/people/no-user-img.svg"}
     alt={data.fullName + "'s profile image"}
   />
   <div>
-    <p class="text-xl mt-1">{data.fullName}</p>
+    <p class:list={["text-xl mt-1", { "font-semibold text-amber-900": isWinner }]}>{data.fullName}</p>
+    {isWinner && (
+      <p class="text-sm font-medium text-amber-600 tracking-wide uppercase" title="This member won a contest during a club meeting.">Winner</p>
+    )}
     {
       !hideRole && (
         <p class="text-lg">
