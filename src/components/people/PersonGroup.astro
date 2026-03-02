@@ -1,19 +1,33 @@
 ---
+import { TypeMember } from "../../contentful-types";
 import Person from "./Person.astro";
 
-const { title, people, filter, darker, hideRoles, small } = Astro.props;
+interface Props {
+  title?: string;
+  people: TypeMember[];
+  filter: (person: TypeMember) => boolean;
+  darker?: boolean;
+  hideRoles?: boolean;
+  small?: boolean;
+}
+
+const { title, people, filter, darker, hideRoles, small }: Props = Astro.props;
 
 // Get person's name, rearanged for sorting
-const getName = (person) => {
+const getName = (person: TypeMember) => {
   return person.fields.fullName.split(" ").reverse().join(" ");
 };
 
-const getImg = (person) => {
-  if (person.fields.photo) return person.fields.photo.fields.file.url;
+const getImg = (person: TypeMember) => {
+  try {
+    if (person.fields.photo) return person.fields.photo.fields.file.url;
+  } catch (e) {
+    console.error("Error getting image for person: " + person.fields.fullName, e);
+  }
   return null;
 };
 
-const sortPeople = (a, b) => {
+const sortPeople = (a: TypeMember, b: TypeMember) => {
   if (getImg(a) && getImg(b)) return getName(a).localeCompare(getName(b));
   return getImg(a) ? -1 : 1;
 };

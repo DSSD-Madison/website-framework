@@ -2,8 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import PersonGroup from '../components/people/PersonGroup.astro';
 import { getAllEntriesOfContentType } from "../services/contentful";
+import { TypeMember } from '../contentful-types';
 
-const people = await getAllEntriesOfContentType('member');
+const people: TypeMember[] = await getAllEntriesOfContentType('member');
 
 ---
 
