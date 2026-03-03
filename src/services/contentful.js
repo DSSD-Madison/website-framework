@@ -11,8 +11,15 @@ export async function getContentTypes() {
   return await client.getContentTypes()
 }
 
-export async function getAllEntriesOfContentType(content_type) {
-  let entries = await client.getEntries({ content_type })
+export async function getAllEntriesOfContentType(content_type, order) {
+  const query = { content_type }
+
+  //only sort if an order is passed in
+  if (order) { 
+    query.order = order
+  }
+
+  const entries = await client.getEntries(query)
   return entries.items
 }
 
