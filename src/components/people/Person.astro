@@ -39,7 +39,7 @@ const isWinner = !!data.winner;
   <div>
     <p class:list={["text-xl mt-1", { "font-semibold text-amber-900": isWinner }]}>{data.fullName}</p>
     {isWinner && (
-      <p class="text-sm font-medium text-amber-600 tracking-wide uppercase" title="This member won a contest during a club meeting.">Winner</p>
+      <p class="text-sm font-medium text-amber-600 tracking-wide uppercase" title="This member won a contest during a club meeting.">🏅</p>
     )}
     {
       !hideRole && (
